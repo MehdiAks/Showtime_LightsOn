@@ -5,18 +5,18 @@
                 <div class="col-lg-5">
                     <a class="btn-contact-footer" href="<?php echo ROOT_URL . '/contact.php'; ?>">Contactez-nous :</a>
                     <p class="mb-1">
-                        <a href="mailto:secretariat@bec-bordeaux?subject=Demande%20de%20contact%20depuis%20le%20site%20BEC%20Bordeaux">
-                            secretariat@bec-bordeaux
+                        <a href="mailto:contact@lightson.fr?subject=Demande%20de%20contact%20depuis%20le%20site%20Lights%20On">
+                            contact@lightson.fr
                         </a>
                     </p>
                     
                     <p class="mb-3"><a href="tel:+33671942380">Tel : 06 71 94 23 80</a><br>
                     <a href="tel:+33556918350">Tel : 05 56 91 83 50</a> </p>
                     <div class="d-flex align-items-center gap-3 mb-4">
-                        <a href="https://www.instagram.com/becbasket/?hl=fr" class="social-icon">
+                        <a href="https://www.instagram.com/lights.on.show/" class="social-icon">
                             <img src="<?php echo ROOT_URL . '/src/images/logo/logo-reseaux-sociaux/instagram.png'; ?>" alt="Instagram">
                         </a>
-                        <a href="https://www.facebook.com/becofficiel/?locale=fr_FR" class="social-icon">
+                        <a href="https://www.facebook.com/lightsonshow" class="social-icon">
                             <img src="<?php echo ROOT_URL . '/src/images/logo/logo-reseaux-sociaux/facebook.png'; ?>" alt="Facebook">
                         </a>
                     </div>
