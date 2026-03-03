@@ -1,8 +1,8 @@
 
         :root {
-            --bec-offwhite: #f6f1ea;
-            --bec-dark: #1c1c1c;
-            --bec-accent: #67081D;
+            --bec-offwhite: #121218;
+            --bec-dark: #ffffff;
+            --bec-accent: #7c3aed;
         }
 
         html {
@@ -40,7 +40,7 @@
         .site-background-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(103, 8, 29, 0.3);
+            background: rgba(124, 58, 237, 0.35);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -123,7 +123,7 @@
             top: calc(100% + 12px);
             left: 0;
             min-width: 220px;
-            background: #fff;
+            background: #1f1f2b;
             border-radius: 16px;
             padding: 12px;
             box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
@@ -165,7 +165,7 @@
         .site-header .header-nav .submenu-list a:hover,
         .site-header .header-nav .submenu-list a:focus,
         .site-header .header-nav .submenu-list a.current {
-            background: rgba(103, 8, 29, 0.08);
+            background: rgba(124, 58, 237, 0.18);
             color: var(--bec-accent);
         }
 
@@ -243,38 +243,38 @@
         }
 
         .btn-bec-primary {
-            background-color: var(--bec-accent);
+            background: linear-gradient(135deg, #6d28d9, #ff4fa3);
             border-color: var(--bec-accent);
             color: #fff;
 
         }
 
         .btn-bec-primary:hover {
-            background-color: #8a0a27;
-            border-color: #8a0a27;
+            background-color: #5b21b6;
+            border-color: #ffd84d;
         }
 
         .btn-bec-outline {
-            border-color: rgba(103, 8, 29, 0.35);
+            border-color: rgba(124, 58, 237, 0.45);
             color: var(--bec-accent);
         }
 
         .btn-bec-outline:hover {
-            background-color: rgba(103, 8, 29, 0.08);
+            background-color: rgba(124, 58, 237, 0.18);
         }
 
         .btn-contact-footer {
-            background-color: #fff;
-            color: #8a0a27;
+            background-color: #ffd84d;
+            color: #1a1a24;
             font-size: 18px;
             padding: 12px 24px;
-            border: 2px solid #fff;
+            border: 2px solid #ffd84d;
             border-radius: 6px;
         }
 
 
         .site-footer {
-            background-color: #8a0a27;
+            background: linear-gradient(135deg, #6d28d9, #ff4fa3);
             text-align: center;
         }
 
@@ -286,12 +286,12 @@
         }
 
         .site-footer .btn-contact-footer {
-            color: #8a0a27;
+            color: #1a1a24;
         }
 
         .site-footer .btn-contact-footer:is(:hover, :focus-visible) {
-            background-color: #fff;
-            color: #8a0a27;
+            background-color: #ffd84d;
+            color: #1a1a24;
             border-color: #fff;
         }
 
@@ -487,7 +487,7 @@
             right: 0;
             height: 100vh;
             width: min(360px, 85vw);
-            background: #fff;
+            background: #1f1f2b;
             box-shadow: -20px 0 40px rgba(0, 0, 0, 0.15);
             padding: 32px 24px;
             display: flex;
@@ -501,7 +501,7 @@
         .header-burger-close {
             align-self: flex-end;
             border: none;
-            background: rgba(103, 8, 29, 0.08);
+            background: rgba(124, 58, 237, 0.18);
             color: var(--bec-dark);
             font-size: 1.6rem;
             line-height: 1;
@@ -517,7 +517,7 @@
 
         .header-burger-close:hover,
         .header-burger-close:focus {
-            background: rgba(103, 8, 29, 0.18);
+            background: rgba(124, 58, 237, 0.18);
             color: var(--bec-accent);
         }
 
@@ -555,7 +555,7 @@
             text-decoration: none;
             font-weight: 600;
             color: var(--bec-dark);
-            background: rgba(103, 8, 29, 0.06);
+            background: rgba(124, 58, 237, 0.06);
         }
 
         .header-burger-panel .header-submenu {
@@ -571,7 +571,7 @@
             padding: 10px 14px;
             border-radius: 12px;
             border: none;
-            background: rgba(103, 8, 29, 0.06);
+            background: rgba(124, 58, 237, 0.06);
             font-weight: 600;
             color: var(--bec-dark);
             cursor: pointer;
@@ -628,7 +628,7 @@
 
         .header-burger-sublist a {
             font-weight: 500;
-            background: rgba(103, 8, 29, 0.04);
+            background: rgba(124, 58, 237, 0.04);
         }
 
         .header-burger-panel .submenu-list a {
@@ -638,18 +638,18 @@
 
         .header-burger-nav a:hover,
         .header-burger-nav a:focus {
-            background: rgba(103, 8, 29, 0.12);
+            background: rgba(124, 58, 237, 0.12);
             color: var(--bec-accent);
         }
 
         .header-burger-nav a.current {
-            background: rgba(103, 8, 29, 0.18);
+            background: rgba(124, 58, 237, 0.18);
             color: var(--bec-accent);
         }
 
         .header-burger-nav .header-burger-boutique-link {
-            border: 2px solid #d4af37;
-            background: #d4af37;
+            border: 2px solid #ffd84d;
+            background: #ffd84d;
             font-weight: 600;
             color: #fff;
         }
@@ -657,8 +657,8 @@
         .header-burger-nav .header-burger-boutique-link:hover,
         .header-burger-nav .header-burger-boutique-link:focus,
         .header-burger-nav .header-burger-boutique-link.current {
-            background: #d4af37;
-            border-color: #d4af37;
+            background: #ffd84d;
+            border-color: #ffd84d;
             color: #fff;
         }
 
@@ -718,8 +718,8 @@
             font-size: 16px;
             padding: 6px 16px;
             border-radius: 999px;
-            border: 3px solid #d4af37;
-            background-color: #d4af37;
+            border: 3px solid #ffd84d;
+            background-color: #ffd84d;
             color: #fff;
             font-weight: 500;
             text-decoration: none;
@@ -729,8 +729,8 @@
         .btn-boutique-header:hover,
         .btn-boutique-header:focus,
         .btn-boutique-header[aria-current="page"] {
-            background-color: #d4af37;
-            border-color: #d4af37;
+            background-color: #ffd84d;
+            border-color: #ffd84d;
             color: #fff;
             text-decoration: none;
         }
@@ -791,7 +791,7 @@
             right: 0;
             height: 100vh;
             width: min(360px, 85vw);
-            background: #fff;
+            background: #1f1f2b;
             box-shadow: -20px 0 40px rgba(0, 0, 0, 0.15);
             padding: 32px 24px;
             display: flex;
@@ -805,7 +805,7 @@
         .header-compte-close {
             align-self: flex-end;
             border: none;
-            background: rgba(103, 8, 29, 0.08);
+            background: rgba(124, 58, 237, 0.18);
             color: var(--bec-dark);
             font-size: 1.6rem;
             line-height: 1;
@@ -821,7 +821,7 @@
 
         .header-compte-close:hover,
         .header-compte-close:focus {
-            background: rgba(103, 8, 29, 0.18);
+            background: rgba(124, 58, 237, 0.18);
             color: var(--bec-accent);
         }
 
@@ -854,7 +854,7 @@
             text-decoration: none;
             font-weight: 600;
             color: var(--bec-dark);
-            background: rgba(103, 8, 29, 0.06);
+            background: rgba(124, 58, 237, 0.06);
         }
 
         .header-compte-group {
@@ -880,17 +880,17 @@
 
         .header-compte-sublist a {
             font-weight: 500;
-            background: rgba(103, 8, 29, 0.04);
+            background: rgba(124, 58, 237, 0.04);
         }
 
         .header-compte-nav a:hover,
         .header-compte-nav a:focus {
-            background: rgba(103, 8, 29, 0.12);
+            background: rgba(124, 58, 237, 0.12);
             color: var(--bec-accent);
         }
 
         .header-compte-nav a.current {
-            background: rgba(103, 8, 29, 0.18);
+            background: rgba(124, 58, 237, 0.18);
             color: var(--bec-accent);
         }
 
@@ -944,16 +944,16 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background-color: #8a0a27;
-            border-color: #8a0a27;
+            background-color: #5b21b6;
+            border-color: #ffd84d;
             color: #fff;
             transition: transform 0.2s ease;
         }
 
         .btn-compte:hover,
         .btn-compte:focus {
-            background-color: #8a0a27;
-            border-color: #8a0a27;
+            background-color: #5b21b6;
+            border-color: #ffd84d;
             color: #fff;
             transform: scale(1.05);
         }

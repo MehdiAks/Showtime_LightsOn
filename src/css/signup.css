@@ -59,7 +59,7 @@
 
 .champ input:focus {
     border-color: var(--bec-accent);
-    box-shadow: 0 0 0 0.2rem rgba(103, 8, 29, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.25);
     outline: none;
 }
 

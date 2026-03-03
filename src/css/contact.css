@@ -12,7 +12,7 @@
 
 .champ input:focus {
     border-color: var(--bec-accent);
-    box-shadow: 0 0 0 0.2rem rgba(103, 8, 29, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.25);
     outline: none;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .btn_envoyer{
-    background-color: #67081d;
+    background-color: #7c3aed;
     color: #ddd;
     padding: 10px;
     border-radius: 25px;
