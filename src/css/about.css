@@ -1,13 +1,88 @@
 .about-page {
-    max-width: 760px;
+    max-width: 920px;
+    color: #f4f1f6;
+}
+
+.about-hero {
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    margin-bottom: 2.25rem;
+    background: linear-gradient(135deg, #120915 0%, #24102a 52%, #4f0f2b 100%);
+    box-shadow: 0 18px 40px rgba(7, 1, 9, 0.35);
+}
+
+.about-kicker {
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ff7aa2;
 }
 
 .about-page h1 {
-    color: #67081D;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 4.6vw, 3rem);
+    line-height: 1.1;
+    font-weight: 800;
+    color: #ffffff;
 }
 
-.about-page p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #1c1c1c;
+.about-lead {
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    line-height: 1.85;
+    margin-bottom: 0;
+    color: #ece7f1;
+}
+
+.about-block {
+    background: #140e17;
+    border: 1px solid rgba(255, 122, 162, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 1.75rem;
+}
+
+.about-block h2 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    letter-spacing: 0.04em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ff9dbc;
+}
+
+.about-block p,
+.about-block li {
+    font-size: 1.04rem;
+    line-height: 1.75;
+    color: #f5edf7;
+}
+
+.about-block ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.about-block li::marker {
+    color: #ff6e9a;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        padding-inline: 0.75rem;
+    }
+
+    .about-hero,
+    .about-block {
+        padding: 1.5rem;
+    }
+
+    .about-block p,
+    .about-block li {
+        font-size: 1rem;
+    }
 }
