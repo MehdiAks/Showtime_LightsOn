@@ -84,6 +84,7 @@ if (function_exists('sql_connect')) {
                     <li><a href="<?php echo ROOT_URL . '/about.php'; ?>" <?php if ($current_page == '/about.php') echo 'class="current"'; ?>>L'Émission</a></li>
                     <li><a href="<?php echo ROOT_URL . '/episodes.php'; ?>" <?php if ($current_page == '/episodes.php') echo 'class="current"'; ?>>Épisodes</a></li>
                     <li><a href="<?php echo ROOT_URL . '/actualites.php'; ?>" <?php if ($current_page == '/actualites.php') echo 'class="current"'; ?>>Blog / Actualités</a></li>
+                    <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/equipe-lightson.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/equipe-lightson.php') echo 'class="current"'; ?>>L'Équipe</a></li>
                     <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/calendrier.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/calendrier.php') echo 'class="current"'; ?>>Calendrier</a></li>
                     <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/boutique.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/boutique.php') echo 'class="current"'; ?>>Boutique</a></li>
                     <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/notre-histoire.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/notre-histoire.php') echo 'class="current"'; ?>>Notre Histoire</a></li>
@@ -112,6 +113,7 @@ if (function_exists('sql_connect')) {
                                     <li><a href="<?php echo ROOT_URL . '/about.php'; ?>" <?php if ($current_page == '/about.php') echo 'class="current"'; ?>>L'Émission</a></li>
                                     <li><a href="<?php echo ROOT_URL . '/episodes.php'; ?>" <?php if ($current_page == '/episodes.php') echo 'class="current"'; ?>>Épisodes</a></li>
                                     <li><a href="<?php echo ROOT_URL . '/actualites.php'; ?>" <?php if ($current_page == '/actualites.php') echo 'class="current"'; ?>>Blog / Actualités</a></li>
+                                    <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/equipe-lightson.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/equipe-lightson.php') echo 'class="current"'; ?>>L'Équipe</a></li>
                                     <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/calendrier.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/calendrier.php') echo 'class="current"'; ?>>Calendrier</a></li>
                                     <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/boutique.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/boutique.php') echo 'class="current"'; ?>>Boutique</a></li>
                                     <li><a href="<?php echo ROOT_URL . '/Pages_supplementaires/notre-histoire.php'; ?>" <?php if ($current_page == '/Pages_supplementaires/notre-histoire.php') echo 'class="current"'; ?>>Notre Histoire</a></li>
