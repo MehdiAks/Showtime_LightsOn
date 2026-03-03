@@ -57,7 +57,7 @@
     background: linear-gradient(180deg, #fff9f7 0%, #ffffff 100%);
     border-radius: 22px;
     padding: 1.4rem;
-    border: 1px solid rgba(103, 8, 29, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.08);
 }
 
 .team-stat-card {
@@ -109,7 +109,7 @@
 }
 
 .team-stat-highlight {
-    background: linear-gradient(150deg, #67081d 0%, #8f1635 100%);
+    background: linear-gradient(150deg, #7c3aed 0%, #a855f7 100%);
     border: none;
 }
 
@@ -377,14 +377,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: #4b2b2b;
+    color: #f2eeff;
     font-weight: 600;
     font-size: 0.8rem;
     min-width: 2.5rem;
 }
 
 .line-chart-frame {
-    background: #f8f4ef;
+    background: #1a1a24;
     border-radius: 20px;
     padding: 1rem;
     border: 1px solid rgba(28, 28, 28, 0.08);
@@ -397,7 +397,7 @@
 }
 
 .line-area {
-    fill: rgba(103, 8, 29, 0.14);
+    fill: rgba(124, 58, 237, 0.14);
 }
 
 .line-area-against {
@@ -419,7 +419,7 @@
 .line-chart-axis {
     position: relative;
     height: 24px;
-    color: #4b2b2b;
+    color: #f2eeff;
     font-weight: 600;
 }
 
@@ -483,7 +483,7 @@
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #5a3a3a;
+    color: #f2eeff;
 }
 
 .donut-value {

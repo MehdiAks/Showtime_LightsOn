@@ -21,7 +21,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    background-color: rgba(103, 8, 29, 0.85);
+    background-color: rgba(124, 58, 237, 0.85);
     border: 1px solid #ddd;
     padding: 2rem;
     color: #fff;
@@ -62,7 +62,7 @@
 }
 
 .btn-more {
-    background-color: #67081d;
+    background-color: #7c3aed;
     color: #ddd;
     padding: 10px;
     border-radius: 25px;
