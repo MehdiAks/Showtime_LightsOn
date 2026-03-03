@@ -1,13 +1,27 @@
 .about-page {
     max-width: 760px;
+    position: relative;
+}
+
+.about-page::after {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -70px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 195, 0, 0.16), transparent 70%);
+    pointer-events: none;
 }
 
 .about-page h1 {
-    color: #67081D;
+    color: var(--bec-purple);
+    text-shadow: 0 0 16px rgba(91, 46, 255, 0.2);
 }
 
 .about-page p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #1c1c1c;
+    color: rgba(242, 238, 255, 0.9);
 }

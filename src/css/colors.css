@@ -1,20 +1,24 @@
 :root {
-    --bec-offwhite: #181822;
+    --bec-purple: #5B2EFF;
+    --bec-charcoal: #1C1C1E;
+    --bec-black-deep: #060608;
+    --bec-pink: #FF2E88;
+    --bec-yellow: #FFC300;
+
+    --bec-offwhite: var(--bec-charcoal);
     --bec-dark: #f2eeff;
-    --bec-accent: #ffd84d;
+    --bec-accent: var(--bec-yellow);
 }
 
 html {
-    background-color: var(--bec-offwhite);
+    background-color: var(--bec-black-deep);
 }
 
 body {
     position: relative;
-    background-color: var(--bec-offwhite);
+    background-color: var(--bec-black-deep);
     color: var(--bec-dark);
 }
-
-
 
 @media (max-width: 768px) {
     .site-main {

@@ -1,11 +1,14 @@
 .matches-hero__title {
     text-align: center;
     font-size: 60px;
+    color: #fff;
+    text-shadow: 0 0 16px rgba(91, 46, 255, 0.24);
 }
 
 .matches-hero__text {
     text-align: center;
     margin-top: 20px;
+    color: rgba(242, 238, 255, 0.84);
 }
 
 .matches-hero__meta {
@@ -15,16 +18,19 @@
 .matches-list__title {
     text-align: center;
     margin-top: 90px;
+    color: var(--bec-yellow);
 }
 
 .match-card {
     text-align: center;
     position: relative;
     overflow: hidden;
-    background-color: rgba(103, 8, 29, 0.85);
-    border: 1px solid #ddd;
+    background: linear-gradient(165deg, rgba(91, 46, 255, 0.26), rgba(6, 6, 8, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2rem;
     color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
 }
 
 .match-card__competition {
@@ -61,11 +67,14 @@
     z-index: 2;
 }
 
+.match-card .btn,
 .btn-more {
-    background-color: #67081d;
-    color: #ddd;
+    background-color: rgba(255, 46, 136, 0.95);
+    border: 1px solid rgba(255, 46, 136, 0.95);
+    color: #fff;
     padding: 10px;
     border-radius: 25px;
+    box-shadow: 0 8px 18px rgba(255, 46, 136, 0.2);
 }
 
 .match-card__date {
@@ -111,4 +120,5 @@
     font-weight: bold;
     justify-content: center;
     align-items: center;
+    text-shadow: 0 0 12px rgba(255, 195, 0, 0.2);
 }
