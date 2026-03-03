@@ -29,7 +29,7 @@ $episodes = [
 ?>
 
 <main class="container py-5">
-    <section class="news-summary text-center mb-4">
+    <section class="news-summary text-center mb-4 scroll-reveal">
         <h1 class="news-summary__title">Épisodes</h1>
         <p class="news-summary__text mx-auto">
             Découvrez les trois épisodes de Lights On à travers une sélection éditoriale dédiée :
@@ -37,7 +37,7 @@ $episodes = [
         </p>
     </section>
 
-    <section class="news-grid" aria-label="Bibliothèque des épisodes">
+    <section class="news-grid scroll-reveal" aria-label="Bibliothèque des épisodes">
         <div class="row g-4">
             <?php foreach ($episodes as $episode): ?>
                 <div class="col-12 col-lg-4">

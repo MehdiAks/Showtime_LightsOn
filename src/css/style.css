@@ -58,17 +58,11 @@
     background: #fff;
     border-radius: 1rem;
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
-    transition: opacity 0.4s ease, transform 0.4s ease;
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
 }
 
-.home-main-surface--hidden {
-    opacity: 0;
-    transform: translateY(24px);
-    pointer-events: none;
-}
 
 .home-section {
     padding: 0;
@@ -230,4 +224,25 @@
 
 .home-article-link {
     color: var(--night-yellow);
+}
+
+@media (max-width: 991.98px) {
+    .home-hero {
+        min-height: clamp(280px, 48vh, 420px);
+    }
+
+    .home-hero-content {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-main-surface {
+        border-radius: 0.75rem;
+        gap: 2rem;
+    }
+
+    .home-articles-container {
+        padding: 1.25rem;
+    }
 }

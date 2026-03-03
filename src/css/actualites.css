@@ -91,3 +91,16 @@
         padding: 1.5rem;
     }
 }
+
+@media (max-width: 991.98px) {
+    .news-card__title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .news-summary,
+    .news-filters {
+        border-radius: 16px;
+    }
+}

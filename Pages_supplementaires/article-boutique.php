@@ -69,7 +69,7 @@ $resolve_boutique_image_url = static function (string $value): string {
 
 <section class="boutique-page">
     <?php if (!$ba_bec_article): ?>
-        <div class="boutique-note">Article introuvable.</div>
+        <div class="boutique-note scroll-reveal">Article introuvable.</div>
     <?php else: ?>
         <?php
         $imageName = $extractImage($ba_bec_article['urlPhotoArtBoutique'] ?? '');
@@ -78,7 +78,7 @@ $resolve_boutique_image_url = static function (string $value): string {
         $category = trim((string) ($ba_bec_article['categorieArtBoutique'] ?? ''));
         $description = trim((string) ($ba_bec_article['descArtBoutique'] ?? ''));
         ?>
-        <article class="boutique-detail">
+        <article class="boutique-detail scroll-reveal">
             <div class="boutique-detail__media">
                 <?php if ($imageUrl): ?>
                     <img src="<?php echo $imageUrl; ?>" alt="<?php echo htmlspecialchars($title !== '' ? $title : 'Article boutique'); ?>">
