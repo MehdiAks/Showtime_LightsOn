@@ -1,0 +1,133 @@
+@import url("../colors.css");
+
+:root {
+    --bec-button-bg: #67081d;
+    --bec-button-bg-hover: #550516;
+    --bec-button-shadow: rgba(103, 8, 29, 0.28);
+    --bec-button-shadow-lifted: rgba(103, 8, 29, 0.4);
+    --cursor-glow-size: 20px;
+}
+
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-glow-size);
+    height: var(--cursor-glow-size);
+    border-radius: 50%;
+    background-color: #67081d;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    z-index: 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor-glow {
+        transition: none;
+    }
+}
+
+button:not(.btn-check),
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn,
+.btn-contact-footer,
+.btn-more,
+.btn_envoyer,
+.bouton {
+    background-color: var(--bec-button-bg);
+    border: 2px solid var(--bec-button-bg);
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    box-shadow: 0 6px 14px var(--bec-button-shadow);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease,
+        border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-info,
+.btn-light,
+.btn-dark,
+.btn-bec-primary {
+    background-color: var(--bec-button-bg);
+    border-color: var(--bec-button-bg);
+    color: #fff;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-warning,
+.btn-outline-info,
+.btn-outline-light,
+.btn-outline-dark,
+.btn-bec-outline {
+    background-color: transparent;
+    border-color: var(--bec-button-bg);
+    color: var(--bec-button-bg);
+}
+
+.btn:is(:hover, :focus-visible),
+button:not(.btn-check):is(:hover, :focus-visible),
+input[type="button"]:is(:hover, :focus-visible),
+input[type="submit"]:is(:hover, :focus-visible),
+input[type="reset"]:is(:hover, :focus-visible),
+.btn-contact-footer:is(:hover, :focus-visible),
+.btn-more:is(:hover, :focus-visible),
+.btn_envoyer:is(:hover, :focus-visible),
+.bouton:is(:hover, :focus-visible) {
+    background-color: var(--bec-button-bg-hover);
+    border-color: var(--bec-button-bg-hover);
+    color: #fff;
+}
+
+.btn-outline-primary:is(:hover, :focus-visible),
+.btn-outline-secondary:is(:hover, :focus-visible),
+.btn-outline-success:is(:hover, :focus-visible),
+.btn-outline-danger:is(:hover, :focus-visible),
+.btn-outline-warning:is(:hover, :focus-visible),
+.btn-outline-info:is(:hover, :focus-visible),
+.btn-outline-light:is(:hover, :focus-visible),
+.btn-outline-dark:is(:hover, :focus-visible),
+.btn-bec-outline:is(:hover, :focus-visible) {
+    background-color: transparent;
+    border-color: var(--bec-button-bg-hover);
+    color: var(--bec-button-bg-hover);
+}
+
+.btn.is-lifted,
+button.is-lifted,
+input.is-lifted,
+.btn-contact-footer.is-lifted,
+.btn-more.is-lifted,
+.btn_envoyer.is-lifted,
+.bouton.is-lifted {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px var(--bec-button-shadow-lifted);
+}
+
+.btn:disabled,
+.btn.disabled,
+button:disabled,
+input:disabled,
+.btn[aria-disabled="true"],
+.btn-more.disabled,
+.btn-more[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

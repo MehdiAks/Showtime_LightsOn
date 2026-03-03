@@ -1,0 +1,13 @@
+.about-page {
+    max-width: 760px;
+}
+
+.about-page h1 {
+    color: #67081D;
+}
+
+.about-page p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #1c1c1c;
+}

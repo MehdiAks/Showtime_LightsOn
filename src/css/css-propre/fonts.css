@@ -1,0 +1,84 @@
+/* Commentaire: Feuille de style pour fonts. */
+@font-face {
+    font-family: "Epilogue";
+    src:
+    local("Epilogue"),
+    url("/src/fonts/Epilogue/Epilogue-VariableFont_wght.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Gotham";
+    src:
+        local("Gotham"),
+        url("/src/fonts/Gotham-font-family/Gotham/Gotham-Black.otf") format("opentype");
+}
+
+body {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-family: "Epilogue", sans-serif;
+}
+
+
+h1,
+.home-carousel-title,
+.news-summary__title,
+.news-card__title,
+.article-editor-display--title,
+.article-editor-display--subtitle,
+.article-title,
+.matches-hero__title,
+.matches-list__title,
+.admin-dashboard .card-title,
+.club-card-title,
+.header-burger-title,
+.header-burger-group-title {
+    font-family: "Gotham", sans-serif;
+    font-weight: 700;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+    color: var(--primary-color);
+}
+
+
+h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+
+h2 {
+    font-family: "Gotham", sans-serif;
+    font-size: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-family: "Gotham", sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+h4 {
+    font-family: "Epilogue", sans-serif;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+small {
+    font-size: 16px;
+    font-family: "Epilogue", sans-serif;
+}
+
+.mini {
+    font-size: 14px;
+    font-family: "Epilogue", sans-serif;
+}

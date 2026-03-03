@@ -1,0 +1,144 @@
+/* =========================
+    PAGE LOGIN – VERSION FINALE
+   ========================= */
+
+.auth-card {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+
+    /* --- STRUCTURE --- */
+    max-width: 380px;
+    margin: 4rem auto; /* centre horizontal + espace vertical */
+}
+
+/* TITRE */
+.auth-card h1 {
+    color: var(--bec-accent);
+    font-weight: 700;
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* CHAMPS */
+.champ {
+    margin-bottom: 1.25rem;
+}
+
+.champ label {
+    font-weight: 500;
+    color: #495057;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.champ input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+}
+
+.champ input::placeholder {
+    color: #adb5bd;
+}
+
+.champ input:focus {
+    border-color: var(--bec-accent);
+    box-shadow: 0 0 0 0.2rem rgba(103, 8, 29, 0.25);
+    outline: none;
+}
+
+/* BOUTON CONNEXION */
+.btn-se-connecter {
+    margin-top: 1.5rem;
+}
+
+.btn-se-connecter button {
+    width: 100%;
+    background-color: var(--bec-accent);
+    border: 1px solid var(--bec-accent);
+    color: #fff;
+    font-weight: 500;
+    padding: 0.6rem;
+    border-radius: 0.375rem;
+}
+
+.btn-se-connecter button:hover {
+    background-color: #8a0a27;
+    border-color: #8a0a27;
+}
+
+/* LIENS */
+.link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--bec-accent);
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: #8a0a27;
+    background: none;
+    border: none;
+}
+
+/* TEXTE BAS */
+.auth-card p {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #495057;
+}
+
+/* ALERTS (inchangées) */
+.alert {
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* PASSWORD TOGGLE (inchangé) */
+.password-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+
+.password-toggle .icon-closed {
+    display: inline;
+}
+
+.password-toggle .icon-open {
+    display: none;
+}
+
+.password-toggle.is-visible .icon-closed {
+    display: none;
+}
+
+.password-toggle.is-visible .icon-open {
+    display: inline;
+}

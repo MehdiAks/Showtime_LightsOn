@@ -1,0 +1,123 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #1f2933;
+}
+
+.article-hero {
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.article-hero__overlay {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.85) 100%);
+  color: #ffffff;
+}
+
+.article-kicker {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.article-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.article-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.article-meta__dot {
+  font-weight: 600;
+}
+
+.article-body {
+  padding: 3rem 0 4rem;
+}
+
+.article-lead {
+  font-size: 1.1rem;
+  color: #3e4c59;
+  margin-bottom: 2rem;
+}
+
+.article-figure img {
+  border-radius: 0.75rem;
+}
+
+.article-caption {
+  font-size: 0.85rem;
+  color: #52606d;
+  margin-top: 0.5rem;
+}
+
+.text-with-line {
+  font-weight: 600;
+  border-left: 3px solid #0d6efd;
+  padding-left: 0.75rem;
+  margin: 2rem 0 1rem;
+}
+
+.comments-block {
+  background: #f8f9fa;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.commentairesaf + .commentairesaf {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.article-sidebar .random-article {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+}
+
+.article-sidebar .random-article img {
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.likes-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: #f1f5f9;
+}
+
+.likes-section .likes-count {
+  margin-bottom: 1rem;
+  color: #52606d;
+  font-weight: 500;
+}
+
+.btn-vote img {
+  width: 20px;
+  height: 20px;
+}

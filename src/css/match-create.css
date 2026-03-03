@@ -1,0 +1,25 @@
+.match-create-alignment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgba(13, 110, 253, 0.08);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.85rem;
+}
+
+.match-score-row {
+    row-gap: 0.75rem;
+}
+
+@media (max-width: 767.98px) {
+    .match-create-alignment {
+        flex-direction: column;
+        text-align: center;
+    }
+}
