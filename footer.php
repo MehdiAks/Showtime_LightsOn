@@ -46,7 +46,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-end">
-                    <a class="footer-credit-link" href="<?php echo ROOT_URL . '/about.php'; ?>">Designed by Les égarés</a>
+                    <a class="footer-credit-link" href="<?php echo ROOT_URL . '/about.php'; ?>">Designed by Studio</a>
                 </div>
             </div>
         </div>
