@@ -1,0 +1,170 @@
+.boutique-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.boutique-hero {
+    background: linear-gradient(120deg, rgba(122, 22, 22, 0.08), rgba(0, 47, 95, 0.08));
+    border-radius: 24px;
+    padding: 2.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.boutique-hero h1 {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    margin-bottom: 0;
+}
+
+.boutique-hero p {
+    margin-bottom: 0;
+    max-width: 60ch;
+}
+
+.boutique-grid {
+    display: grid;
+    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.boutique-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    height: 100%;
+}
+
+.boutique-card__media {
+    border-radius: 16px;
+    background: #f3f4f6;
+    color: #6b7280;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    min-height: 180px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.boutique-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.boutique-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.boutique-card__category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1f2937;
+    background: rgba(15, 23, 42, 0.08);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    width: fit-content;
+}
+
+.boutique-card__details {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+    color: #1f2937;
+}
+
+.boutique-card__details strong {
+    font-weight: 600;
+}
+
+.boutique-card__prices {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    display: grid;
+    gap: 0.25rem;
+    font-weight: 600;
+}
+
+.boutique-card__prices span {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boutique-card__link {
+    margin-top: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.boutique-card__link:hover {
+    text-decoration: underline;
+}
+
+.boutique-note {
+    background: #fff7ed;
+    border: 1px solid rgba(234, 88, 12, 0.2);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    color: #9a3412;
+}
+
+.boutique-detail {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) 1.2fr;
+    gap: 1.5rem;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.boutique-detail__media {
+    border-radius: 16px;
+    background: #f3f4f6;
+    display: grid;
+    min-height: 320px;
+    place-items: center;
+    color: #6b7280;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+}
+
+.boutique-detail__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.boutique-detail__content h1 {
+    margin-top: 0.75rem;
+}
+
+.boutique-detail__prices {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .boutique-hero {
+        padding: 1.75rem;
+    }
+
+    .boutique-detail {
+        grid-template-columns: 1fr;
+    }
+}

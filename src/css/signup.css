@@ -1,0 +1,217 @@
+/* =========================
+    SIGNUP – LAYOUT GENERAL
+   ========================= */
+
+.auth-card {
+    max-width: 520px; /* plus large que login, mais toujours vertical */
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    margin: 2rem auto;
+}
+
+.auth-card h1 {
+    color: var(--bec-accent);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* =========================
+    GRID SIGNUP
+   ========================= */
+
+.signup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+}
+
+/* champs pleine largeur */
+.signup-grid .full {
+    grid-column: 1 / -1;
+}
+
+/* espacement homogène */
+.signup-grid .champ {
+    margin-bottom: 1.25rem;
+}
+
+.champ label {
+    font-weight: 500;
+    color: #495057;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.champ input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+    font-size: 1rem;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.champ input:focus {
+    border-color: var(--bec-accent);
+    box-shadow: 0 0 0 0.2rem rgba(103, 8, 29, 0.25);
+    outline: none;
+}
+
+/* =========================
+   INPUT AVEC ICONE
+   ========================= */
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding-right: 2.5rem;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+
+.password-toggle .icon-closed {
+    display: inline;
+}
+
+.password-toggle .icon-open {
+    display: none;
+}
+
+.password-toggle.is-visible .icon-closed {
+    display: none;
+}
+
+.password-toggle.is-visible .icon-open {
+    display: inline;
+}
+
+/* =========================
+    TEXTES D'AIDE
+   ========================= */
+
+.form-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* =========================
+    CHECKBOX
+   ========================= */
+
+.checkbox-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    margin: 1.5rem 0;
+}
+
+.checkbox-row input[type="checkbox"] {
+    margin-top: 0.3rem;
+    width: 30px;
+    height: 30px;
+}
+
+.checkbox-row label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+}
+
+/* =========================
+    BOUTON
+   ========================= */
+
+.auth-form .btn-se-connecter {
+    margin-top: 1.5rem;
+}
+
+.btn-se-connecter button {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid var(--bec-accent);
+    color: var(--bec-accent);
+    font-weight: 500;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    height: 40px;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.btn-se-connecter button:hover,
+.btn-se-connecter button:focus {
+    background-color: var(--bec-accent);
+    color: #fff;
+}
+
+/* =========================
+    TEXTE BAS
+   ========================= */
+
+.auth-form p {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #495057;
+}
+
+.link {
+    color: var(--bec-accent);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+    ALERTS
+   ========================= */
+
+.alert {
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* =========================
+    RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+    .signup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-grid .offset-right {
+        grid-column: auto;
+    }
+}

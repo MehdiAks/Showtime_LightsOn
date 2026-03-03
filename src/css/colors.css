@@ -1,0 +1,24 @@
+:root {
+    --bec-offwhite: #f6f1ea;
+    --bec-dark: #1c1c1c;
+    --bec-accent: #67081D;
+}
+
+html {
+    background-color: var(--bec-offwhite);
+}
+
+body {
+    position: relative;
+    background-color: var(--bec-offwhite);
+    color: var(--bec-dark);
+}
+
+
+
+@media (max-width: 768px) {
+    .site-main {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+}
