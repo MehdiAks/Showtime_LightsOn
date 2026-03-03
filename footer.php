@@ -46,7 +46,11 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-end">
+<<<<<<< HEAD
                     <a class="footer-credit-link" href="<?php echo ROOT_URL . '/about.php'; ?>">Designed by Studio</a>
+=======
+                    <a class="footer-credit-link" href="<?php echo ROOT_URL . '/about.php'; ?>">Designed by Les égarés</a>
+>>>>>>> d0b6a8cb86ca1b4b6a0f367b6f805b79f5760735
                 </div>
             </div>
         </div>
