@@ -150,9 +150,9 @@ if ($isPartial) {
 <main class="container py-5">
     <section class="news-summary">
         <p class="news-summary__eyebrow">Actualités</p>
-        <h1 class="news-summary__title">Restez au plus près de la vie du club</h1>
+        <h1 class="news-summary__title">Le blog de l'émission</h1>
         <p class="news-summary__text">
-            Entre résultats, interviews, moments forts et coulisses, retrouvez ici l'ensemble des actualités du BEC.
+            Coulisses de tournage, interviews, culture nightlife et annonces d'épisodes : suivez toute l'actualité Lights On.
             Ce fil éditorial met en avant les histoires qui font vibrer la communauté, avec des mises à jour régulières
             pour ne rien manquer des temps forts.
         </p>
@@ -178,7 +178,7 @@ if ($isPartial) {
                     id="search"
                     name="search"
                     class="form-control"
-                    placeholder="Ex: victoire, équipe, match"
+                    placeholder="Ex: DJ set, coulisses, invité"
                     value="<?php echo htmlspecialchars($search, ENT_QUOTES); ?>"
                 />
             </div>
@@ -189,7 +189,7 @@ if ($isPartial) {
                     id="keyword"
                     name="keyword"
                     class="form-control"
-                    placeholder="Ex: entraînement, événement"
+                    placeholder="Ex: chronique, nightlife"
                     list="keyword-options"
                     data-keywords="<?php echo htmlspecialchars(json_encode($ba_bec_keywords, JSON_UNESCAPED_UNICODE), ENT_QUOTES); ?>"
                     value="<?php echo htmlspecialchars($ba_bec_keyword, ENT_QUOTES); ?>"
