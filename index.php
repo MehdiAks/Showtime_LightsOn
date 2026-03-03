@@ -161,8 +161,8 @@ $homeStats = [
         <h3 class="fw-bold mb-0 typewriter-line" data-typewriter data-text="Mettre la lumière sur la nuit"></h3>
     </div>
 </section>
-<div class="container py-5 home-main-surface home-main-surface--hidden">
-    <section class="home-section text-center">
+<div class="container py-5 home-main-surface scroll-reveal">
+    <section class="home-section text-center scroll-reveal">
         <h1 class="fw-bold mb-3">Lights On — The Night Club Show</h1>
         <p class="lead mb-4">
             Une émission culturelle immersive pour explorer la <strong>vie nocturne</strong> sous toutes ses formes : fête, culture,
@@ -176,7 +176,7 @@ $homeStats = [
         </div>
     </section>
 
-    <section class="home-section home-program-section">
+    <section class="home-section home-program-section scroll-reveal">
         <h2 class="fw-bold mb-3 text-center">À l'affiche cette nuit</h2>
         <div class="row g-4">
             <?php foreach ($nightHighlights as $highlight): ?>
@@ -193,7 +193,7 @@ $homeStats = [
         </div>
     </section>
 
-    <section class="home-section">
+    <section class="home-section scroll-reveal">
         <h2 class="fw-bold mb-4">La nuit en chiffres</h2>
         <p class="text-body-secondary mb-4">
         Des indicateurs visuels pour suivre l'intensité de l'émission.
@@ -438,7 +438,6 @@ $homeStats = [
     })();
 </script>
 <script src="<?php echo ROOT_URL . '/src/js/home-articles-hover.js'; ?>"></script>
-<script src="<?php echo ROOT_URL . '/src/js/home-scroll-reveal.js'; ?>"></script>
 <?php require_once 'footer.php'; ?>
 
 <p></p>

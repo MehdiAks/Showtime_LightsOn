@@ -71,18 +71,18 @@ $buildPlaceholderText = static function (?string $value, string $placeholder): s
 ?>
 
 <section class="boutique-page">
-    <div class="boutique-hero">
+    <div class="boutique-hero scroll-reveal">
         <h1>La boutique du BEC</h1>
         <p>Découvrez nos articles officiels. Toutes les tenues sont disponibles du XS au XXL pour équiper petits et grands supporters.</p>
     </div>
 
     <?php if (empty($ba_bec_articles)): ?>
-        <div class="boutique-note">
+        <div class="boutique-note scroll-reveal">
             Aucun article n'est disponible pour le moment.
         </div>
     <?php endif; ?>
 
-    <div class="boutique-grid">
+    <div class="boutique-grid scroll-reveal">
         <?php foreach ($ba_bec_articles as $article): ?>
             <?php
             $imageName = $extractImage($article['urlPhotoArtBoutique'] ?? '');

@@ -38,14 +38,14 @@ function resolve_episode_image_url(?string $path, string $defaultImage): string
 ?>
 
 <main class="container py-5">
-    <section class="news-summary text-center mb-4">
+    <section class="news-summary text-center mb-4 scroll-reveal">
         <h1 class="news-summary__title">Épisodes</h1>
         <p class="news-summary__lead">
             Retrouvez tous les épisodes de Lights On : invités, sujets, coulisses et moments marquants de la nuit.
         </p>
     </section>
 
-    <section class="news-grid" aria-label="Bibliothèque des épisodes">
+    <section class="news-grid scroll-reveal" aria-label="Bibliothèque des épisodes">
         <div class="row g-4">
             <?php if (!empty($episodes)): ?>
                 <?php foreach ($episodes as $episode): ?>
