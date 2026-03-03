@@ -1,10 +1,10 @@
 @import url("../colors.css");
 
 :root {
-    --bec-button-bg: #67081d;
-    --bec-button-bg-hover: #550516;
-    --bec-button-shadow: rgba(103, 8, 29, 0.28);
-    --bec-button-shadow-lifted: rgba(103, 8, 29, 0.4);
+    --bec-button-bg: #6d28d9;
+    --bec-button-bg-hover: #5b21b6;
+    --bec-button-shadow: rgba(109, 40, 217, 0.28);
+    --bec-button-shadow-lifted: rgba(109, 40, 217, 0.4);
     --cursor-glow-size: 20px;
 }
 
@@ -15,7 +15,7 @@
     width: var(--cursor-glow-size);
     height: var(--cursor-glow-size);
     border-radius: 50%;
-    background-color: #67081d;
+    background-color: #6d28d9;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s ease-out;
