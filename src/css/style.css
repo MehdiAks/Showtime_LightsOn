@@ -166,3 +166,68 @@
 .home-article-link:hover {
     text-decoration: underline;
 }
+
+
+:root {
+    --night-purple: #6d28d9;
+    --night-anthracite: #1f1f2b;
+    --night-yellow: #ffd84d;
+    --night-pink: #ff4fa3;
+}
+
+.home-hero {
+    background: radial-gradient(circle at 20% 30%, rgba(255, 79, 163, 0.28), transparent 45%),
+                radial-gradient(circle at 80% 20%, rgba(255, 216, 77, 0.24), transparent 42%),
+                linear-gradient(135deg, rgba(109, 40, 217, 0.92), rgba(31, 31, 43, 0.94));
+    border-radius: 0 0 1.8rem 1.8rem;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+.home-hero-content h2,
+.home-hero-content h3 {
+    font-family: "Anton", "Gotham", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 20px rgba(255, 216, 77, 0.45), 0 0 30px rgba(255, 79, 163, 0.3);
+}
+
+.home-main-surface {
+    background: linear-gradient(160deg, rgba(18, 18, 27, 0.94), rgba(42, 34, 62, 0.9));
+    color: #f6f2ff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 48px rgba(8, 8, 14, 0.55);
+}
+
+.home-main-surface .text-body-secondary {
+    color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.home-main-surface .btn-primary {
+    background: linear-gradient(90deg, var(--night-purple), var(--night-pink));
+    border-color: transparent;
+}
+
+.home-main-surface .btn-outline-secondary {
+    border-color: var(--night-yellow);
+    color: var(--night-yellow);
+}
+
+.home-main-surface .btn-outline-secondary:hover {
+    background: var(--night-yellow);
+    color: #1f1f2b;
+}
+
+.home-articles-container {
+    background: rgba(18, 18, 27, 0.45);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.home-articles .home-article-card {
+    background: linear-gradient(160deg, rgba(41, 41, 56, 0.95), rgba(26, 26, 38, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.home-article-link {
+    color: var(--night-yellow);
+}
