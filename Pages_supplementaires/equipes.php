@@ -111,7 +111,7 @@ foreach ($coaches ?? [] as $coach) {
                                     <p>Aucun responsable renseigné.</p>
                                 <?php endif; ?>
                             </div>
-                            <a class="team-link" href="<?php echo ROOT_URL . '/Pages_supplementaires/equipe.php?numEquipe=' . urlencode((string) $team['numEquipe']); ?>">
+                            <a class="team-link" href="<?php echo ROOT_URL . '/Pages_supplementaires/equipe-sportive.php?numEquipe=' . urlencode((string) $team['numEquipe']); ?>">
                                 Voir l'équipe
                             </a>
                         </div>
