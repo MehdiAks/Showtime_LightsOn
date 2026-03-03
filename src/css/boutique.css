@@ -199,3 +199,21 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 991.98px) {
+    .boutique-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 575.98px) {
+    .boutique-hero,
+    .boutique-card,
+    .boutique-detail {
+        border-radius: 16px;
+    }
+
+    .boutique-grid {
+        gap: 1.25rem;
+    }
+}

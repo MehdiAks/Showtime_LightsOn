@@ -95,7 +95,7 @@ function render_news_grid(array $ba_bec_articles): string
     $countLabel = format_news_count($articleCount);
     ob_start();
     ?>
-    <section class="news-grid" aria-live="polite" data-news-count="<?php echo $articleCount; ?>" data-news-count-label="<?php echo htmlspecialchars($countLabel, ENT_QUOTES); ?>">
+    <section class="news-grid scroll-reveal" aria-live="polite" data-news-count="<?php echo $articleCount; ?>" data-news-count-label="<?php echo htmlspecialchars($countLabel, ENT_QUOTES); ?>">
         <div class="row g-4">
             <?php if (!empty($ba_bec_articles)): ?>
                 <?php foreach ($ba_bec_articles as $ba_bec_article): ?>
@@ -158,7 +158,7 @@ if ($isPartial) {
         </p>
     </section>
 
-    <section class="news-filters" aria-label="Filtres des actualités">
+    <section class="news-filters scroll-reveal" aria-label="Filtres des actualités">
         <form method="get" class="row g-3 align-items-end">
             <div class="col-12 col-lg-3">
                 <label for="theme" class="form-label">Thématique</label>

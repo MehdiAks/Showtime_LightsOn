@@ -8,6 +8,10 @@
     --cursor-glow-size: 20px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .cursor-glow {
     position: fixed;
     top: 0;
@@ -23,9 +27,32 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     .cursor-glow {
         transition: none;
     }
+
+    .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 button:not(.btn-check),
@@ -103,9 +130,9 @@ input[type="reset"]:is(:hover, :focus-visible),
 .btn-outline-light:is(:hover, :focus-visible),
 .btn-outline-dark:is(:hover, :focus-visible),
 .btn-bec-outline:is(:hover, :focus-visible) {
-    background-color: transparent;
+    background-color: var(--bec-button-bg-hover);
     border-color: var(--bec-button-bg-hover);
-    color: var(--bec-button-bg-hover);
+    color: #fff;
 }
 
 .btn.is-lifted,
