@@ -16,7 +16,7 @@
 body {
     color: var(--primary-color);
     font-size: 18px;
-    font-family: "Epilogue", sans-serif;
+    font-family: "Inter", "Epilogue", sans-serif;
 }
 
 
@@ -33,7 +33,7 @@ h1,
 .club-card-title,
 .header-burger-title,
 .header-burger-group-title {
-    font-family: "Gotham", sans-serif;
+    font-family: "Anton", "Gotham", sans-serif;
     font-weight: 700;
     font-variant: small-caps;
     letter-spacing: 0.05em;
@@ -49,7 +49,7 @@ h1 {
 
 
 h2 {
-    font-family: "Gotham", sans-serif;
+    font-family: "Anton", "Gotham", sans-serif;
     font-size: 45px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -57,7 +57,7 @@ h2 {
 }
 
 h3 {
-    font-family: "Gotham", sans-serif;
+    font-family: "Anton", "Gotham", sans-serif;
     font-size: 30px;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -66,7 +66,7 @@ h3 {
 }
 
 h4 {
-    font-family: "Epilogue", sans-serif;
+    font-family: "Inter", "Epilogue", sans-serif;
     font-size: 22px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -75,10 +75,10 @@ h4 {
 
 small {
     font-size: 16px;
-    font-family: "Epilogue", sans-serif;
+    font-family: "Inter", "Epilogue", sans-serif;
 }
 
 .mini {
     font-size: 14px;
-    font-family: "Epilogue", sans-serif;
+    font-family: "Inter", "Epilogue", sans-serif;
 }

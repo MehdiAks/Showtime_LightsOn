@@ -328,7 +328,7 @@ if (!$becMatchesAvailable) {
     }
 
     .home-matches-section {
-        background: #7a0019;
+        background: linear-gradient(160deg, rgba(109, 40, 217, 0.92), rgba(31, 31, 43, 0.96));
         color: #ffffff;
         padding: 2rem;
         border-radius: 1.5rem;
@@ -347,7 +347,7 @@ if (!$becMatchesAvailable) {
     }
 
     .home-matches-section .card {
-        background: transparent;
+        background: rgba(15, 15, 22, 0.35);
         color: #ffffff;
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
@@ -382,10 +382,11 @@ if (!$becMatchesAvailable) {
 
     .home-match-vs {
         font-size: 0.85rem;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: #ffffff;
+        color: #ffd84d;
+        text-shadow: 0 0 12px rgba(255, 216, 77, 0.6);
         opacity: 1;
     }
 
@@ -401,38 +402,39 @@ if (!$becMatchesAvailable) {
 </style>
 <section class="home-hero full-bleed">
     <div class="home-hero-content text-center">
-        <h2 class="fw-bold mb-0 typewriter-line" data-typewriter data-text="Bordeaux étudiant club"></h2><br>
-        <h3 class="fw-bold mb-0 typewriter-line" data-typewriter data-text="Basket-ball"></h3>
+        <h2 class="fw-bold mb-0 typewriter-line" data-typewriter data-text="LIGHTS ON"></h2><br>
+        <h3 class="fw-bold mb-0 typewriter-line" data-typewriter data-text="Mettre la lumière sur la nuit"></h3>
     </div>
 </section>
 <div class="container py-5 home-main-surface home-main-surface--hidden">
     <section class="home-section text-center">
-        <h1 class="fw-bold mb-3">Bienvenue au BEC</h1>
+        <h1 class="fw-bold mb-3">Lights On — The Night Club Show</h1>
         <p class="lead mb-4">
-            Bordeaux n'est pas seulement son miroir d'eau ou encore ses cannelés. C'est aussi une ville de sport et de talent ! <br>
-            Ce blog permet de suivre toute l'actualité du Bordeaux Etudiant Club, les jours de matchs, les résultats, les évènements, les joueurs, ...
-            <br>Le but ? Mettre en valeur la section basket du club, partager les performances de l'équipe ainsi que ses valeurs du sport.
+            Une émission culturelle immersive pour explorer la <strong>vie nocturne</strong> sous toutes ses formes : fête, culture,
+            lieux, ambiance et personnages qui font vibrer la nuit.<br>
+            Notre promesse éditoriale : créer un contraste fort entre obscurité et lumière, avec un univers visuel moderne,
+            dynamique, lumineux et jamais kitsch.
         </p>
         <div class="d-flex gap-2 justify-content-center">
-            <a class="btn btn-primary" href="actualites.php">Voir les actualités</a>
-            <a class="btn btn-outline-secondary" href="contact.php">Nous contacter</a>
+            <a class="btn btn-primary" href="actualites.php">Découvrir les chroniques</a>
+            <a class="btn btn-outline-secondary" href="contact.php">Proposer un lieu</a>
         </div>
     </section>
 
     <section class="home-section home-matches-section">
-        <h2 class="fw-bold mb-3 text-center">Nos prochains matchs à Barbey !</h2>
+        <h2 class="fw-bold mb-3 text-center">À l'affiche cette nuit</h2>
         <div class="row g-4">
             <?php if (!$becMatchesAvailable): ?>
                 <div class="col-12">
                     <article class="card h-100 border-0 shadow-sm">
                         <div class="card-body">
-                            <span class="badge text-bg-secondary mb-2">Matchs à venir</span>
-                            <h3 class="h5 mb-2">Consultez le calendrier officiel</h3>
+                            <span class="badge text-bg-secondary mb-2">Programmation</span>
+                            <h3 class="h5 mb-2">Explorez toute la programmation</h3>
                             <p class="mb-3 text-body-secondary">
-                                Les prochains matchs sont disponibles sur le site de la FFBB.
+                                Retrouvez les prochains épisodes, performances et rendez-vous nocturnes.
                             </p>
                             <a class="btn btn-primary" href="https://competitions.ffbb.com/ligues/naq/comites/0033/clubs/naq0033024" target="_blank" rel="noopener noreferrer">
-                                Voir le calendrier FFBB
+                                Voir l'agenda Lights On
                             </a>
                         </div>
                     </article>
@@ -504,9 +506,9 @@ if (!$becMatchesAvailable) {
                                         </div>
                                     <?php endif; ?>
                                 <?php else: ?>
-                                    <span class="badge text-bg-secondary mb-2">Match à venir</span>
-                                    <h3 class="h5 mb-2">Planning en cours</h3>
-                                    <p class="mb-1 text-body-secondary">Planning des prochains matchs en cours.</p>
+                                    <span class="badge text-bg-secondary mb-2">Prochain rendez-vous</span>
+                                    <h3 class="h5 mb-2">Programmation en cours</h3>
+                                    <p class="mb-1 text-body-secondary">La prochaine capsule nocturne est en préparation.</p>
                                 <?php endif; ?>
                             </div>
                         </article>
@@ -517,15 +519,15 @@ if (!$becMatchesAvailable) {
     </section>
 
     <section class="home-section">
-        <h2 class="fw-bold mb-4">Cette saison à Barbey</h2>
+        <h2 class="fw-bold mb-4">La nuit en chiffres</h2>
         <p class="text-body-secondary mb-4">
-        Les chiffres des matchs séniors disputés à domicile.
+        Des indicateurs visuels pour suivre l'intensité de l'émission.
         </p>
         <div class="row g-4">
         <div class="col-12 col-md-4">
             <article class="card h-100 border-0 shadow-sm">
             <div class="card-body">
-                <p class="text-uppercase text-body-secondary mb-2">Matchs joués</p>
+                <p class="text-uppercase text-body-secondary mb-2">Segments diffusés</p>
                 <p
                 class="display-6 fw-bold mb-0"
                 <?php if ($becMatchesAvailable): ?>
@@ -541,7 +543,7 @@ if (!$becMatchesAvailable) {
         <div class="col-12 col-md-4">
             <article class="card h-100 border-0 shadow-sm">
             <div class="card-body">
-                <p class="text-uppercase text-body-secondary mb-2">Points marqués</p>
+                <p class="text-uppercase text-body-secondary mb-2">Lieux explorés</p>
                 <p
                 class="display-6 fw-bold mb-0"
                 <?php if ($becMatchesAvailable): ?>
@@ -557,7 +559,7 @@ if (!$becMatchesAvailable) {
         <div class="col-12 col-md-4">
             <article class="card h-100 border-0 shadow-sm">
             <div class="card-body">
-                <p class="text-uppercase text-body-secondary mb-2">Points encaissés</p>
+                <p class="text-uppercase text-body-secondary mb-2">Invités mis en lumière</p>
                 <p
                 class="display-6 fw-bold mb-0"
                 <?php if ($becMatchesAvailable): ?>
@@ -665,8 +667,8 @@ if (!$becMatchesAvailable) {
 </script>
 
     <section aria-label="Dernières actualités" class="home-articles">
-        <h2 class="fw-bold mb-4">Nos dernières actualités</h2>
-            <p class="text-body-secondary mb-4">Retrouvez ci-dessous nos dernières actualités et articles récents.</p>
+        <h2 class="fw-bold mb-4">Dernières chroniques nocturnes</h2>
+            <p class="text-body-secondary mb-4">Interviews, portraits, lieux iconiques et récits immersifs de la nuit.</p>
         <!-- Si on a au moins un article récupéré, on les affiche. -->
         <?php if (!empty($ba_bec_articles)): ?>
             <div class="home-articles-container">
@@ -708,7 +710,7 @@ if (!$becMatchesAvailable) {
                     <?php endforeach; ?>
                 </div>
                 <div class="mt-4">
-                    <a class="btn btn-primary" href="actualites.php">Voir les autres actualités</a>
+                    <a class="btn btn-primary" href="actualites.php">Voir toutes les chroniques</a>
                 </div>
             </div>
         <?php else: ?>
