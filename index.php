@@ -55,239 +55,24 @@ $articleStmt->execute();
 // On récupère les résultats sous forme de tableau associatif.
 $ba_bec_articles = $articleStmt->fetchAll(PDO::FETCH_ASSOC);
 
-// On récupère les prochains matchs à domicile (Barbey) pour les équipes 1 garçons et filles.
-$nextMatches = [
-    'SG1' => null,
-    'SF1' => null,
-];
-$becMatchesAvailable = true;
-
-$formatMatchDate = static function (string $matchDate): string {
-    $date = DateTime::createFromFormat('Y-m-d', $matchDate);
-    if (!$date) {
-        return $matchDate;
-    }
-
-    $capitalizeFirst = static function (string $value): string {
-        if ($value === '') {
-            return $value;
-        }
-        if (function_exists('mb_substr') && function_exists('mb_strtoupper')) {
-            $first = mb_strtoupper(mb_substr($value, 0, 1, 'UTF-8'), 'UTF-8');
-            $rest = mb_substr($value, 1, null, 'UTF-8');
-            return $first . $rest;
-        }
-        return ucfirst($value);
-    };
-
-    if (class_exists('IntlDateFormatter')) {
-        $formatter = new IntlDateFormatter(
-            'fr_FR',
-            IntlDateFormatter::FULL,
-            IntlDateFormatter::NONE,
-            $date->getTimezone()->getName(),
-            IntlDateFormatter::GREGORIAN,
-            'EEEE d MMMM'
-        );
-        $formatted = $formatter->format($date);
-        if ($formatted !== false) {
-            return $capitalizeFirst($formatted);
-        }
-    }
-
-    return $date->format('d/m/Y');
-};
-
-$formatMatchTime = static function (?string $matchTime): string {
-    if (empty($matchTime)) {
-        return '';
-    }
-    $time = DateTime::createFromFormat('H:i:s', $matchTime) ?: DateTime::createFromFormat('H:i', $matchTime);
-    return $time ? $time->format('H\hi') : $matchTime;
-};
-
-$logoDirectory = $_SERVER['DOCUMENT_ROOT'] . '/src/images/logo/logo-adversaire';
-$logoWebBase = ROOT_URL . '/src/images/logo/logo-adversaire';
-$becLogoUrl = ROOT_URL . '/src/images/logo/logo-bec/logo.png';
-$defaultLogoUrl = ROOT_URL . '/src/images/logo/team-default.svg';
-
-$normalizeClubKey = static function (string $name): string {
-    $name = trim($name);
-    if ($name === '') {
-        return '';
-    }
-    $name = preg_replace('/\s+\d+$/', '', $name);
-    $name = preg_replace('/\s+/', ' ', $name);
-    $transliterated = iconv('UTF-8', 'ASCII//TRANSLIT', $name);
-    if ($transliterated !== false) {
-        $name = $transliterated;
-    }
-    $name = strtoupper($name);
-    $name = preg_replace('/[^A-Z0-9]+/', '_', $name);
-    return trim($name, '_');
-};
-
-$buildLogoMap = static function () use ($logoDirectory, $logoWebBase, $normalizeClubKey): array {
-    static $logoMap = null;
-    if (is_array($logoMap)) {
-        return $logoMap;
-    }
-    $logoMap = [];
-    if (!is_dir($logoDirectory)) {
-        return $logoMap;
-    }
-    $files = glob($logoDirectory . '/*.{png,PNG,jpg,JPG,jpeg,JPEG,avif,AVIF,webp,WEBP,svg,SVG}', GLOB_BRACE) ?: [];
-    foreach ($files as $file) {
-        $baseName = pathinfo($file, PATHINFO_FILENAME);
-        $key = $normalizeClubKey($baseName);
-        if ($key === '' || isset($logoMap[$key])) {
-            continue;
-        }
-        $logoMap[$key] = $logoWebBase . '/' . basename($file);
-    }
-    return $logoMap;
-};
-
-$resolveClubLogo = static function (?string $clubName) use ($normalizeClubKey, $buildLogoMap, $defaultLogoUrl): string {
-    $key = $normalizeClubKey((string) $clubName);
-    if ($key === '') {
-        return $defaultLogoUrl;
-    }
-    $logoMap = $buildLogoMap();
-    return $logoMap[$key] ?? $defaultLogoUrl;
-};
-
-$resolveTeamLogo = static function (string $teamName, string $becTeamName) use ($normalizeClubKey, $resolveClubLogo, $becLogoUrl): string {
-    $normalizedTeam = $normalizeClubKey($teamName);
-    $normalizedBec = $normalizeClubKey($becTeamName);
-    if ($normalizedTeam !== '' && $normalizedTeam === $normalizedBec) {
-        return $becLogoUrl;
-    }
-    return $resolveClubLogo($teamName);
-};
-
-$clubIdentifiers = [
-    'bec',
-    'bordeaux',
-    'etudiant',
+$nightHighlights = [
+    [
+        'badge' => 'Épisode',
+        'title' => 'Voix de la nuit',
+        'description' => 'Rencontre avec les artistes, DJ et collectifs qui font vibrer la scène locale.',
+    ],
+    [
+        'badge' => 'Chronique',
+        'title' => 'Carnet d’adresses',
+        'description' => 'Une sélection de lieux, concepts et ambiances à découvrir après le coucher du soleil.',
+    ],
 ];
 
-$matches = [];
-try {
-    $matchesStmt = $DB->prepare(
-        "SELECT
-            m.dateMatch AS matchDate,
-            m.heureMatch AS matchTime,
-            m.lieuMatch AS location,
-            m.scoreBec AS scoreBec,
-            m.scoreAdversaire AS scoreAdversaire,
-            m.clubAdversaire AS clubAdversaire,
-            m.numEquipeAdverse AS numEquipeAdverse,
-            m.source AS source,
-            m.codeEquipe AS teamCode,
-            e.nomEquipe AS teamName
-        FROM `MATCH` m
-        INNER JOIN EQUIPE e ON m.codeEquipe = e.codeEquipe
-        WHERE m.dateMatch >= CURDATE()
-        ORDER BY m.dateMatch ASC, m.heureMatch ASC"
-    );
-    $matchesStmt->execute();
-    $matches = $matchesStmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $exception) {
-    $becMatchesAvailable = false;
-}
-
-$resolveMatchSide = static function (?string $location): string {
-    $location = strtolower(trim((string) $location));
-    if ($location === '') {
-        return 'home';
-    }
-    if (str_contains($location, 'exterieur') || str_contains($location, 'extérieur') || str_contains($location, 'away')) {
-        return 'away';
-    }
-    if (str_contains($location, 'domicile') || str_contains($location, 'home') || str_contains($location, 'barbey')) {
-        return 'home';
-    }
-    return 'home';
-};
-
-$buildOpponent = static function (array $match): string {
-    $opponent = trim((string) ($match['clubAdversaire'] ?? ''));
-    if (!empty($match['numEquipeAdverse'])) {
-        $opponent = trim($opponent . ' ' . $match['numEquipeAdverse']);
-    }
-    return $opponent !== '' ? $opponent : 'Adversaire';
-};
-
-foreach ($matches as $match) {
-    $side = $resolveMatchSide($match['location'] ?? '');
-    $isHome = $side !== 'away';
-    $opponent = $buildOpponent($match);
-    $teamHome = $isHome ? ($match['teamName'] ?? 'BEC') : $opponent;
-    $teamAway = $isHome ? $opponent : ($match['teamName'] ?? 'BEC');
-    $teamCode = strtoupper(trim((string) ($match['teamCode'] ?? '')));
-    $teamHomeName = strtolower($teamHome);
-    $teamAwayName = strtolower($teamAway);
-    $key = null;
-    if ($teamCode === 'SF1') {
-        $key = 'SF1';
-    } elseif ($teamCode === 'SG1') {
-        $key = 'SG1';
-    } elseif ($teamHomeName !== '' && (str_contains($teamHomeName, 'sf1') || str_contains($teamHomeName, 'filles 1') || str_contains($teamHomeName, 'fille 1'))) {
-        $key = 'SF1';
-    } elseif ($teamHomeName !== '' && (str_contains($teamHomeName, 'sg1') || str_contains($teamHomeName, 'garçons 1') || str_contains($teamHomeName, 'garcons 1') || str_contains($teamHomeName, 'garcon 1'))) {
-        $key = 'SG1';
-    }
-
-    if ($key === null || $nextMatches[$key] !== null) {
-        continue;
-    }
-    $location = strtolower(trim((string) ($match['location'] ?? '')));
-    if ($location !== '' && !str_contains($location, 'barbey') && !str_contains($location, 'domicile')) {
-        continue;
-    }
-
-    $nextMatches[$key] = [
-        'teamHome' => $teamHome,
-        'teamAway' => $teamAway,
-        'matchDate' => $match['matchDate'],
-        'matchTime' => $match['matchTime'] ?? '',
-        'location' => $match['location'] ?? 'Gymnase Barbey',
-        'source' => $match['source'] ?? '',
-        'becTeam' => $match['teamName'] ?? 'BEC',
-        'teamCode' => $teamCode,
-    ];
-}
-
-$homeStats = [];
-if ($becMatchesAvailable) {
-    try {
-        $homeStatsStmt = $DB->prepare(
-            "SELECT
-                SUM(CASE WHEN scoreBec IS NOT NULL THEN scoreBec ELSE 0 END) AS pointsFor,
-                SUM(CASE WHEN scoreAdversaire IS NOT NULL THEN scoreAdversaire ELSE 0 END) AS pointsAgainst,
-                SUM(CASE WHEN scoreBec IS NOT NULL AND scoreAdversaire IS NOT NULL THEN 1 ELSE 0 END) AS homeMatchCount
-            FROM `MATCH`"
-        );
-        $homeStatsStmt->execute();
-        $homeStats = $homeStatsStmt->fetch(PDO::FETCH_ASSOC) ?: [];
-        $homeStats = [
-            'matches' => (int) ($homeStats['homeMatchCount'] ?? 0),
-            'pointsFor' => (int) ($homeStats['pointsFor'] ?? 0),
-            'pointsAgainst' => (int) ($homeStats['pointsAgainst'] ?? 0),
-        ];
-    } catch (PDOException $exception) {
-        $becMatchesAvailable = false;
-    }
-}
-
-if (!$becMatchesAvailable) {
-    $homeStats = [
-        'matches' => 'À déterminer',
-        'pointsFor' => 'beaucoup',
-        'pointsAgainst' => '0',
-    ];
-}
+$homeStats = [
+    'segments' => 24,
+    'places' => 18,
+    'guests' => 41,
+];
 ?>
 
 <style>
@@ -327,75 +112,45 @@ if (!$becMatchesAvailable) {
         }
     }
 
-    .home-matches-section {
+    .home-program-section {
         background: linear-gradient(160deg, rgba(109, 40, 217, 0.92), rgba(31, 31, 43, 0.96));
         color: #ffffff;
         padding: 2rem;
         border-radius: 1.5rem;
     }
 
-    .home-matches-section h2 {
+    .home-program-section h2 {
         font-size: 1.5rem;
     }
 
-    .home-matches-section p {
+    .home-program-section p {
         font-size: 0.95rem;
     }
 
-    .home-matches-section .text-body-secondary {
+    .home-program-section .text-body-secondary {
         color: rgba(255, 255, 255, 0.75) !important;
     }
 
-    .home-matches-section .card {
+    .home-program-section .card {
         background: rgba(15, 15, 22, 0.35);
         color: #ffffff;
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .home-matches-section .card .text-body-secondary {
+    .home-program-section .card .text-body-secondary {
         color: rgba(255, 255, 255, 0.7) !important;
     }
 
-    .home-match-card h3 {
+    .home-program-card h3 {
         font-size: 1rem;
     }
 
-    .home-match-logos {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-
-    .home-match-logo {
-        width: 88px;
-        height: 88px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .home-match-logo img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-    }
-
-    .home-match-vs {
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #ffd84d;
-        text-shadow: 0 0 12px rgba(255, 216, 77, 0.6);
-        opacity: 1;
-    }
-
-    .home-match-info {
+    .home-program-info {
         margin-bottom: 0;
         line-height: 1.2;
     }
 
-    .home-matches-section .btn-outline-light {
+    .home-program-section .btn-outline-light {
         color: #ffffff;
         border-color: #ffffff;
     }
@@ -421,100 +176,20 @@ if (!$becMatchesAvailable) {
         </div>
     </section>
 
-    <section class="home-section home-matches-section">
+    <section class="home-section home-program-section">
         <h2 class="fw-bold mb-3 text-center">À l'affiche cette nuit</h2>
         <div class="row g-4">
-            <?php if (!$becMatchesAvailable): ?>
-                <div class="col-12">
-                    <article class="card h-100 border-0 shadow-sm">
+            <?php foreach ($nightHighlights as $highlight): ?>
+                <div class="col-12 col-lg-6">
+                    <article class="card h-100 border-0 shadow-sm home-program-card">
                         <div class="card-body">
-                            <span class="badge text-bg-secondary mb-2">Programmation</span>
-                            <h3 class="h5 mb-2">Explorez toute la programmation</h3>
-                            <p class="mb-3 text-body-secondary">
-                                Retrouvez les prochains épisodes, performances et rendez-vous nocturnes.
-                            </p>
-                            <a class="btn btn-primary" href="https://competitions.ffbb.com/ligues/naq/comites/0033/clubs/naq0033024" target="_blank" rel="noopener noreferrer">
-                                Voir l'agenda Lights On
-                            </a>
+                            <span class="badge text-bg-secondary mb-2"><?php echo htmlspecialchars($highlight['badge']); ?></span>
+                            <h3 class="h5 mb-2"><?php echo htmlspecialchars($highlight['title']); ?></h3>
+                            <p class="home-program-info text-body-secondary mb-0"><?php echo htmlspecialchars($highlight['description']); ?></p>
                         </div>
                     </article>
                 </div>
-            <?php else: ?>
-                <?php
-                $matchCards = [
-                    $nextMatches['SG1'] ? array_merge($nextMatches['SG1'], ['badge' => 'text-bg-primary']) : null,
-                    $nextMatches['SF1'] ? array_merge($nextMatches['SF1'], ['badge' => 'text-bg-danger']) : null,
-                ];
-                ?>
-                <?php foreach ($matchCards as $match): ?>
-                    <div class="col-12 col-lg-6">
-                        <article class="card h-100 border-0 shadow-sm home-match-card">
-                            <div class="card-body">
-                                <?php if ($match): ?>
-                                    <?php $label = $match['label'] ?? ''; ?>
-                                    <?php if ($label !== ''): ?>
-                                        <span class="badge <?php echo $match['badge']; ?> mb-2">
-                                            <?php echo htmlspecialchars($label); ?>
-                                        </span>
-                                    <?php endif; ?>
-                                    <?php
-                                    $becTeamKey = $normalizeClubKey($match['becTeam'] ?? '');
-                                    $homeKey = $normalizeClubKey($match['teamHome'] ?? '');
-                                    $awayKey = $normalizeClubKey($match['teamAway'] ?? '');
-                                    $teamCodeLabel = $match['teamCode'] ?? '';
-                                    $displayHome = ($homeKey !== '' && $homeKey === $becTeamKey && $teamCodeLabel !== '')
-                                        ? $teamCodeLabel
-                                        : ($match['teamHome'] ?? '');
-                                    $displayAway = ($awayKey !== '' && $awayKey === $becTeamKey && $teamCodeLabel !== '')
-                                        ? $teamCodeLabel
-                                        : ($match['teamAway'] ?? '');
-                                    ?>
-                                    <h3 class="h5 mb-2 text-center">
-                                        <?php echo htmlspecialchars($displayHome); ?> vs. <?php echo htmlspecialchars($displayAway); ?>
-                                    </h3>
-                                    <?php
-                                    $homeLogo = $resolveTeamLogo($match['teamHome'], $match['becTeam']);
-                                    $awayLogo = $resolveTeamLogo($match['teamAway'], $match['becTeam']);
-                                    $location = trim((string) ($match['location'] ?? ''));
-                                    $locationLower = function_exists('mb_strtolower')
-                                        ? mb_strtolower($location, 'UTF-8')
-                                        : strtolower($location);
-                                    ?>
-                                    <div class="home-match-logos justify-content-center my-3">
-                                        <div class="home-match-logo">
-                                            <img src="<?php echo htmlspecialchars($homeLogo); ?>" alt="Logo <?php echo htmlspecialchars($match['teamHome']); ?>">
-                                        </div>
-                                        <span class="home-match-vs">vs</span>
-                                        <div class="home-match-logo">
-                                            <img src="<?php echo htmlspecialchars($awayLogo); ?>" alt="Logo <?php echo htmlspecialchars($match['teamAway']); ?>">
-                                        </div>
-                                    </div>
-                                    <p class="home-match-info text-center">
-                                        <strong><?php echo htmlspecialchars($formatMatchDate($match['matchDate'])); ?></strong>
-                                    </p>
-                                    <?php if ($formatMatchTime($match['matchTime']) !== ''): ?>
-                                        <p class="home-match-info text-center"><?php echo htmlspecialchars($formatMatchTime($match['matchTime'])); ?></p>
-                                    <?php endif; ?>
-                                    <?php if ($location !== '' && $locationLower !== 'domicile'): ?>
-                                        <p class="home-match-info text-center text-body-secondary"><?php echo htmlspecialchars($location); ?></p>
-                                    <?php endif; ?>
-                                    <?php if (!empty($match['source'])): ?>
-                                        <div class="text-center mt-3">
-                                            <a class="btn btn-outline-light btn-sm" href="<?php echo htmlspecialchars($match['source']); ?>" target="_blank" rel="noopener noreferrer">
-                                                En savoir plus
-                                            </a>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php else: ?>
-                                    <span class="badge text-bg-secondary mb-2">Prochain rendez-vous</span>
-                                    <h3 class="h5 mb-2">Programmation en cours</h3>
-                                    <p class="mb-1 text-body-secondary">La prochaine capsule nocturne est en préparation.</p>
-                                <?php endif; ?>
-                            </div>
-                        </article>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+            <?php endforeach; ?>
         </div>
     </section>
 
@@ -530,12 +205,10 @@ if (!$becMatchesAvailable) {
                 <p class="text-uppercase text-body-secondary mb-2">Segments diffusés</p>
                 <p
                 class="display-6 fw-bold mb-0"
-                <?php if ($becMatchesAvailable): ?>
-                    data-counter
-                    data-target="<?php echo number_format((int) $homeStats['matches'], 0, ',', ' '); ?>"
-                <?php endif; ?>
+                data-counter
+                data-target="<?php echo number_format((int) $homeStats['segments'], 0, ',', ' '); ?>"
                 >
-                <?php echo $becMatchesAvailable ? '0' : htmlspecialchars((string) $homeStats['matches']); ?>
+                0
                 </p>
             </div>
             </article>
@@ -546,12 +219,10 @@ if (!$becMatchesAvailable) {
                 <p class="text-uppercase text-body-secondary mb-2">Lieux explorés</p>
                 <p
                 class="display-6 fw-bold mb-0"
-                <?php if ($becMatchesAvailable): ?>
-                    data-counter
-                    data-target="<?php echo number_format((int) $homeStats['pointsFor'], 0, ',', ' '); ?>"
-                <?php endif; ?>
+                data-counter
+                data-target="<?php echo number_format((int) $homeStats['places'], 0, ',', ' '); ?>"
                 >
-                <?php echo $becMatchesAvailable ? '0' : htmlspecialchars((string) $homeStats['pointsFor']); ?>
+                0
                 </p>
             </div>
             </article>
@@ -562,12 +233,10 @@ if (!$becMatchesAvailable) {
                 <p class="text-uppercase text-body-secondary mb-2">Invités mis en lumière</p>
                 <p
                 class="display-6 fw-bold mb-0"
-                <?php if ($becMatchesAvailable): ?>
-                    data-counter
-                    data-target="<?php echo number_format((int) $homeStats['pointsAgainst'], 0, ',', ' '); ?>"
-                <?php endif; ?>
+                data-counter
+                data-target="<?php echo number_format((int) $homeStats['guests'], 0, ',', ' '); ?>"
                 >
-                <?php echo $becMatchesAvailable ? '0' : htmlspecialchars((string) $homeStats['pointsAgainst']); ?>
+                0
                 </p>
             </div>
             </article>
