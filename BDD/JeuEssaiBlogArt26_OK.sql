@@ -218,6 +218,68 @@ VALUES
     "Si la ville de Bordeaux a sa charte graphique et son propre logo elle n’est pas la seule, on retrouve nombreux logo tout aussi caractéristique s’inspirant de l’histoire, comme les logos d’Aquitaine, de l’Union Bordeaux-Bègles ou des bleus de Bordeaux : les Girondins !", 
     "imgArt20.jpeg", 
     03);
+
+-- ---------------------------------------------------------
+-- Seed éditorial LIGHTS ON (culture nocturne, 4 articles)
+-- ---------------------------------------------------------
+DELETE FROM MOTCLEARTICLE WHERE numArt IN (1, 2, 3, 4);
+DELETE FROM ARTICLE WHERE numArt IN (1, 2, 3, 4);
+
+INSERT INTO ARTICLE (numArt, dtCreaArt, dtMajArt, libTitrArt, libChapoArt, libAccrochArt, parag1Art,
+  libSsTitr1Art, parag2Art, libSsTitr2Art, parag3Art, libConclArt, urlPhotArt, numThem)
+VALUES
+  (1, '2026-01-08 20:15:00', null, 'Pourquoi la nuit inspire les artistes ?',
+   'Quand les façades se taisent et que la ville passe en lumière rasante, les artistes trouvent un espace mental plus libre. La nuit ouvre une scène sensible où la musique, la photo, l’écriture et la performance peuvent dialoguer sans le bruit du jour.',
+   'Dans l’obscurité, les repères changent : ce qui semblait banal devient matière à création.',
+   'La nuit agit d’abord comme un filtre émotionnel. Les contrastes deviennent plus francs, les néons découpent les silhouettes, et les détails prennent une charge symbolique que l’on remarque moins en plein soleil.',
+   'Silence, rythme et imaginaire',
+   'Elle modifie aussi le tempo. Les rues se vident, les sons se hiérarchisent, la respiration collective ralentit. Cet environnement favorise l’introspection : on écoute mieux, on observe davantage, on assume des idées plus audacieuses.',
+   'Une scène vivante pour les disciplines artistiques',
+   'Dans les clubs, les friches et les studios, la nuit devient un laboratoire. Les DJ testent des textures sonores, les réalisateurs explorent la basse lumière, les plasticiens jouent avec les ombres et les reflets pour inventer de nouveaux récits visuels.',
+   'Créer la nuit, ce n’est pas fuir le réel : c’est l’éclairer autrement. C’est là que naît l’identité artistique de LIGHTS ON, entre culture urbaine, émotion collective et liberté d’expérimenter.',
+   '/src/uploads/article/article-38.jpg', 3),
+
+  (2, '2026-01-12 18:40:00', null, 'Coulisses : installation du plateau',
+   'Avant l’arrivée des caméras, chaque tournage de LIGHTS ON commence par une chorégraphie discrète. L’équipe technique construit un plateau pensé pour la nuit : circulation fluide, lumière maîtrisée et ambiance immersive.',
+   'Le décor n’est pas un simple fond : c’est un instrument narratif qui guide l’œil du public.',
+   'Première étape, la cartographie du lieu. On repère les sources lumineuses existantes, les zones d’ombre naturelles et les perspectives qui racontent le mieux l’espace. Cette préparation évite de suréclairer et conserve le caractère nocturne.',
+   'Montage, lumière et son',
+   'Ensuite viennent les modules : structures, praticables, habillages et signalétique. La lumière est installée par couches, avec une base douce puis des accents colorés pour donner du relief. Côté son, les tests de diffusion garantissent une écoute précise sans saturer l’atmosphère.',
+   'La dernière heure avant le direct',
+   'Juste avant le lancement, tout se joue dans les réglages fins : balance des blancs, intensité des contre-jours, trajectoires caméra, répétition des entrées artistes. Cette phase transforme un espace vide en scène vivante, prête à accueillir la nuit et ses histoires.',
+   'Les coulisses font partie du spectacle : elles donnent à chaque émission sa signature visuelle, artisanale et profondément culturelle.',
+   '/src/uploads/article/article-1.jpg', 1),
+
+  (3, '2026-01-18 22:05:00', null, 'Interview exclusive – DJ Nova',
+   'Figure montante des nuits électroniques, DJ Nova compose des sets où l’énergie du dancefloor rencontre une écriture sonore cinématographique. Pour LIGHTS ON, elle revient sur sa méthode, ses influences et sa vision de la scène nocturne.',
+   '"Je ne prépare pas une playlist, je prépare un voyage" : une phrase qui résume sa démarche.',
+   'DJ Nova explique qu’elle construit ses performances comme un récit en trois actes : ouverture sensorielle, montée rythmique, puis zone de relâchement. Ce découpage lui permet de garder le public en mouvement sans jamais sacrifier la subtilité musicale.',
+   'Créer du lien avec le public',
+   'Pour elle, un bon set se lit dans les regards autant que dans les BPM. Elle observe la salle, ajuste les textures, ouvre des respirations. L’objectif n’est pas d’aller vite, mais d’installer une tension collective qui rassemble les générations et les sensibilités.',
+   'L’avenir des nuits créatives',
+   'Interrogée sur la scène actuelle, elle défend des événements plus inclusifs et une programmation ouverte aux hybridations : live, spoken word, arts visuels, performance. Selon elle, la nuit est un territoire culturel complet, pas seulement un moment festif.',
+   'Avec DJ Nova, LIGHTS ON confirme son cap : raconter la nuit comme un espace de création, de partage et d’avant-garde artistique.',
+   '/src/uploads/article/article-38.jpg', 2),
+
+  (4, '2026-01-25 19:30:00', null, 'Comment filmer en basse lumière ?',
+   'Filmer la nuit demande une approche précise : il faut préserver l’atmosphère sans perdre la lisibilité des visages et des mouvements. En contexte LIGHTS ON, l’idée est de capter l’intensité culturelle des lieux nocturnes, pas de les aplatir.',
+   'La première règle : accepter l’ombre et travailler avec elle plutôt que la combattre.',
+   'Commencez par une exposition mesurée. Montez la sensibilité progressivement, ouvrez le diaphragme et stabilisez vos plans. Une image légèrement sombre mais propre raconte mieux la nuit qu’une image surexposée et bruitée.',
+   'Composer avec les sources disponibles',
+   'Utilisez les lumières existantes comme des partenaires : enseignes, projecteurs de scène, lampes latérales. Positionnez les sujets de trois quarts pour modeler les volumes, puis ajoutez une petite source d’appoint pour garder un regard net.',
+   'Penser le mouvement et l’étalonnage',
+   'Privilégiez des mouvements lents, des focales adaptées aux espaces serrés et une balance des blancs cohérente avec la température du lieu. En postproduction, corrigez avec retenue pour conserver la matière des noirs et la profondeur des couleurs.',
+   'En basse lumière, la technique sert l’émotion : chaque plan doit transmettre la vibration de la nuit, son mystère et son élégance.',
+   '/src/uploads/article/article-1.jpg', 1);
+
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (1, 1);
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (1, 6);
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (2, 1);
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (2, 6);
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (3, 1);
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (3, 6);
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (4, 1);
+INSERT INTO MOTCLEARTICLE (numArt, numMotCle) VALUES (4, 6);
 --
 -- ----------------------------------------------
 

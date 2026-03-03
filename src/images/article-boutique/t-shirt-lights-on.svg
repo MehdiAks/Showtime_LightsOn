@@ -1,0 +1,6 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="640" height="480" fill="#0F172A"/>
+<rect x="70" y="50" width="500" height="380" rx="28" fill="#111827" stroke="#38BDF8" stroke-opacity="0.4"/>
+<path d="M244 131L286 91H354L396 131L444 112L469 171L427 194V363H213V194L171 171L196 112L244 131Z" fill="#1E293B" stroke="#93C5FD" stroke-width="6"/>
+<text x="320" y="255" text-anchor="middle" fill="#E2E8F0" font-family="Arial" font-size="42" font-weight="700">LIGHTS ON</text>
+</svg>
