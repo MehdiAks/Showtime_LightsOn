@@ -1,11 +1,24 @@
 /* Commentaire: Feuille de style pour la page Actualités. */
 
 .news-summary {
-    background: #ffffff;
+    position: relative;
+    background: linear-gradient(165deg, rgba(28, 28, 30, 0.96), rgba(6, 6, 8, 0.95));
     border-radius: 24px;
     padding: 2.5rem;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.24);
     margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.news-summary::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 46, 136, 0.15), transparent 72%);
 }
 
 .news-summary__eyebrow {
@@ -13,7 +26,7 @@
     letter-spacing: 0.12em;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #67081d;
+    color: var(--bec-yellow);
     margin-bottom: 0.75rem;
 }
 
@@ -21,37 +34,41 @@
     font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .news-summary__text {
     font-size: 1.05rem;
     max-width: 760px;
     margin-bottom: 0;
-    color: #2b2b2b;
+    color: rgba(242, 238, 255, 0.86);
 }
 
 .news-filters {
-    background: #ffffff;
+    background: rgba(28, 28, 30, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 1.75rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
     margin-bottom: 2.5rem;
 }
 
 .news-filters__count {
     font-weight: 600;
-    color: #6c757d;
+    color: rgba(242, 238, 255, 0.72);
 }
 
 .news-card {
+    position: relative;
     border-radius: 18px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    background: linear-gradient(165deg, rgba(28, 28, 30, 0.92), rgba(6, 6, 8, 0.94));
 }
 
 .news-card__media {
-    background: #f3f3f3;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .news-card__image {
@@ -62,17 +79,19 @@
 
 .news-card__meta {
     margin-bottom: 0.75rem;
+    color: rgba(242, 238, 255, 0.72);
 }
 
 .news-card__title {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
+    color: #fff;
 }
 
 .news-card__excerpt {
     font-size: 1rem;
-    color: #4b4b4b;
+    color: rgba(242, 238, 255, 0.82);
     margin-bottom: 1.5rem;
 }
 
@@ -80,6 +99,7 @@
     padding: 2rem;
     font-weight: 600;
     text-align: center;
+    color: rgba(242, 238, 255, 0.84);
 }
 
 @media (max-width: 768px) {
