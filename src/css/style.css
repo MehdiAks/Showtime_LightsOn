@@ -170,11 +170,9 @@
 }
 
 .home-hero {
-    background: radial-gradient(circle at 20% 30%, rgba(255, 79, 163, 0.28), transparent 45%),
-                radial-gradient(circle at 80% 20%, rgba(255, 216, 77, 0.24), transparent 42%),
-                linear-gradient(135deg, rgba(109, 40, 217, 0.92), rgba(31, 31, 43, 0.94));
-    border-radius: 0 0 1.8rem 1.8rem;
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .home-hero-content h2,
