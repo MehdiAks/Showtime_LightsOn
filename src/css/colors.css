@@ -1,20 +1,52 @@
 :root {
-    --bec-offwhite: #181822;
-    --bec-dark: #f2eeff;
+    --bec-offwhite: #121218;
+    --bec-dark: #ffffff;
     --bec-accent: #ffd84d;
+    --bec-violet: #7c3aed;
+    --bec-pink: #ff4fa3;
+    --bec-surface: #1a1a24;
 }
 
 html {
-    background-color: var(--bec-offwhite);
+    background: linear-gradient(180deg, #101014 0%, #1b1b27 100%);
 }
 
 body {
     position: relative;
-    background-color: var(--bec-offwhite);
+    background: linear-gradient(180deg, #101014 0%, #1b1b27 100%);
     color: var(--bec-dark);
 }
 
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+label {
+    color: #ffffff;
+}
 
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+    background: linear-gradient(135deg, var(--bec-violet), var(--bec-pink));
+    color: #ffffff;
+    border: 1px solid var(--bec-accent);
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: linear-gradient(135deg, #8b5cf6, #ff6bb4);
+    color: #ffffff;
+}
 
 @media (max-width: 768px) {
     .site-main {
