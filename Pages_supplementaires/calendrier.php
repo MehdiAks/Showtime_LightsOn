@@ -206,13 +206,13 @@ $renderMatchCard = static function (array $ba_bec_match) use ($resolveTeamLogo):
 <main class="container py-5">
     <section class="matches-hero">
         <p class="matches-hero__eyebrow">Calendrier</p>
-        <h1 class="matches-hero__title">Les prochains matchs des équipes seniors</h1>
+        <h1 class="matches-hero__title">Les prochains rendez-vous de l'émission</h1>
         <p class="matches-hero__text">
-            Retrouvez ici le prochain match de chaque équipe senior du club, affiché selon la date du jour.
+            Retrouvez ici les prochaines diffusions, tournages, soirées spéciales et événements partenaires.
         </p>
         <div class="matches-hero__meta">
             <?php if ($becMatchesAvailable && !empty($lastUpdate)): ?>
-                <span class="matches-hero__update">Dernière mise à jour : <?php echo htmlspecialchars($lastUpdate); ?></span>
+                <span class="matches-hero__update">Dernière mise à jour du planning : <?php echo htmlspecialchars($lastUpdate); ?></span>
             <?php endif; ?>
         </div>
     </section>
@@ -220,12 +220,12 @@ $renderMatchCard = static function (array $ba_bec_match) use ($resolveTeamLogo):
     <section class="matches-list" aria-live="polite">
         <?php if (!$becMatchesAvailable): ?>
             <div class="alert alert-light border matches-empty" role="status">
-                Le calendrier n'est pas disponible pour le moment.
+                Le calendrier de l'émission n'est pas disponible pour le moment.
             </div>
         <?php elseif (!empty($homeMatches) || !empty($awayMatches)): ?>
             <?php if (!empty($homeMatches)): ?>
                 <div class="mb-5">
-                    <h2 class="matches-list__title">Matchs à domicile</h2>
+                    <h2 class="matches-list__title">Diffusions & tournages à venir</h2>
                     <div class="row g-4">
                         <?php foreach ($homeMatches as $ba_bec_match): ?>
                             <?php echo $renderMatchCard($ba_bec_match); ?>
@@ -235,7 +235,7 @@ $renderMatchCard = static function (array $ba_bec_match) use ($resolveTeamLogo):
             <?php endif; ?>
             <?php if (!empty($awayMatches)): ?>
                 <div>
-                    <h2 class="matches-list__title">Matchs à l'extérieur</h2>
+                    <h2 class="matches-list__title">Événements partenaires</h2>
                     <div class="row g-4">
                         <?php foreach ($awayMatches as $ba_bec_match): ?>
                             <?php echo $renderMatchCard($ba_bec_match); ?>
@@ -245,7 +245,7 @@ $renderMatchCard = static function (array $ba_bec_match) use ($resolveTeamLogo):
             <?php endif; ?>
         <?php else: ?>
             <div class="alert alert-light border matches-empty" role="status">
-                Aucun match n'est disponible pour le moment.
+                Aucun événement n'est disponible pour le moment.
             </div>
         <?php endif; ?>
     </section>
