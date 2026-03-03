@@ -5,19 +5,21 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
 
 <section class="about-page container py-5">
-    <h1 class="mb-3">À propos</h1>
+    <h1 class="mb-3">L'Émission</h1>
     <p>
-        Ce site a été conçu par <strong>Les égarés</strong>, une équipe d’étudiants passionnés
-        qui a imaginé et développé cette vitrine autour du BEC Basket.
+        <strong>Lights On</strong> est une émission pensée pour mettre la lumière sur la nuit : ses visages,
+        ses lieux, sa culture et son énergie.
     </p>
-    <p>Mehdi Afankous, Romain Bezombes, Alvin Bonaventure-Sanchez, Juliette Rieunau, Phuong-My Nguyen</p>
     <p>
-        Merci à <strong>Martine Bornerie</strong>, l’enseignante qui a supervisé le cours
-        et accompagné le projet.
+        Chaque épisode suit une structure claire : ouverture plateau, sujet principal, chronique, puis rencontre
+        avec un·e invité·e qui incarne la scène nocturne.
+    </p>
+    <p>
+        Direction artistique : univers contrasté, néons chauds/froids, identité visuelle percutante et rythme éditorial
+        inspiré de références pop comme Arcane, Burger Quiz et Casino Royale.
     </p>
 </section>
 
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/footer.php';
 ?>
-
