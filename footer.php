@@ -5,15 +5,15 @@
                 <div class="col-lg-5">
                     <a class="btn-contact-footer" href="<?php echo ROOT_URL . '/contact.php'; ?>">Contactez-nous :</a>
                     <p class="mb-1">
-                        <a href="mailto:contact@lightson.fr?subject=Demande%20de%20contact%20depuis%20le%20site%20Lights%20On">
-                            contact@lightson.fr
+                        <a href="mailto:lumens.studio.lightson@gmail.com?subject=Demande%20de%20contact%20depuis%20le%20site%20Lights%20On">
+                            lumens.studio.lightson@gmail.com
                         </a>
                     </p>
                     
-                    <p class="mb-3"><a href="tel:+33671942380">Tel : 06 71 94 23 80</a><br>
-                    <a href="tel:+33556918350">Tel : 05 56 91 83 50</a> </p>
+                    <p class="mb-3"><a href="tel:+33787277133">Tel : 07 87 27 71 33</a><br>
+                    <a href="tel:+33557122044">Tel : 05 57 12 20 44</a> </p>
                     <div class="d-flex align-items-center gap-3 mb-4">
-                        <a href="https://www.instagram.com/lights.on.show/" class="social-icon">
+                        <a href="https://www.instagram.com/lightson_tv" class="social-icon">
                             <img src="<?php echo ROOT_URL . '/src/images/logo/logo-reseaux-sociaux/instagram.png'; ?>" alt="Instagram">
                         </a>
                         <a href="https://www.facebook.com/lightsonshow" class="social-icon">
@@ -25,11 +25,12 @@
                 <div class="col-lg-4">
                     <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387.73473039224695!2d-0.5620506434721906!3d44.827972032339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55264b1f8d16e7%3A0x60bae14b3c5cbd38!2s8%20Cr%20Barbey%2C%2033800%20Bordeaux!5e0!3m2!1sfr!2sfr!4v1770375688862!5m2!1sfr!2sfr""
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11316.427184850047!2d-0.57307245!3d44.8397584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55264a9fd1515f%3A0x2069c2b4402ca5e2!2sIUT%20Bordeaux%20Montaigne!5e0!3m2!1sfr!2sfr!4v1772588121692!5m2!1sfr!2sfr"
                             style="border:0;"
                             allowfullscreen=""
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            
                     </div>
                 </div>
             </div>
@@ -46,11 +47,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-end">
-<<<<<<< HEAD
-                    <a class="footer-credit-link" href="<?php echo ROOT_URL . '/about.php'; ?>">Designed by Studio</a>
-=======
-                    <a class="footer-credit-link" href="<?php echo ROOT_URL . '/about.php'; ?>">Designed by Les égarés</a>
->>>>>>> d0b6a8cb86ca1b4b6a0f367b6f805b79f5760735
+                    <a class="footer-credit-link" href="<?php echo ROOT_URL . '/about.php'; ?>">Designed by Lumens Studio</a>
                 </div>
             </div>
         </div>
