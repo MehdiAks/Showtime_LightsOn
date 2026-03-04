@@ -11,136 +11,87 @@ $pageBackgroundPoster = ROOT_URL . '/src/images/background/background-index-1.we
 require_once 'header.php';
 ?>
 
-<style>
-    .typewriter-line {
-        position: relative;
-        display: inline-block;
-        white-space: nowrap;
-        max-width: 100%;
-    }
-
-    .typewriter-line::after {
-        content: "";
-        display: inline-block;
-        width: 2px;
-        height: 1em;
-        background: currentColor;
-        margin-left: 6px;
-        vertical-align: -0.1em;
-        animation: caret-blink 0.9s steps(1) infinite;
-    }
-
-    .typewriter-line.is-done::after {
-        opacity: 0;
-        animation: none;
-    }
-
-    @keyframes caret-blink {
-        50% {
-            opacity: 0;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .typewriter-line::after {
-            animation: none;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .typewriter-line {
-            white-space: normal;
-            overflow-wrap: anywhere;
-        }
-    }
-</style>
-
 <section class="home-hero full-bleed">
-    <div class="home-hero-content text-center">
-        <h1 class="fw-bold mb-2 typewriter-line" data-typewriter data-text="LIGHTS ON"></h1>
-        <br>
-        <p class="lead mb-4 typewriter-line" data-typewriter data-text="Mettre la lumière sur la nuit."></p>
-        <br>
-        <a class="btn btn-primary" href="episodes.php">▶ Voir le dernier épisode</a>
+    <div class="home-hero-overlay"></div>
+    <div class="container home-hero-content">
+        <span class="home-live-pill">● EN REPLAY</span>
+        <p class="home-channel mb-2">LIGHTS ON · Culture nocturne</p>
+        <h1 class="home-main-title">L'émission qui fait parler la nuit</h1>
+        <p class="home-main-subtitle">Reportages, invités, performances et coulisses des lieux qui font vibrer la ville après le coucher du soleil.</p>
+        <div class="home-hero-actions">
+            <a class="btn btn-primary" href="episodes.php">Regarder le dernier épisode</a>
+            <a class="btn btn-outline-light" href="about.php">Découvrir l'émission</a>
+        </div>
     </div>
 </section>
 
-<div class="container py-5 home-main-surface home-main-surface--hidden">
-    <section class="home-section text-center">
-        <h2 class="fw-bold mb-3">Concept</h2>
-        <p class="lead mb-0">
-            Une émission culturelle immersive pour explorer la <strong>vie nocturne</strong> sous toutes ses formes : fête, culture,
-            lieux, ambiance et personnages qui font vibrer la nuit.
-        </p>
+<div class="container py-5 home-main-surface">
+    <section class="home-highlight-strip">
+        <article class="home-highlight-card">
+            <p class="home-highlight-label">Ce soir</p>
+            <h2>Spéciale clubs underground</h2>
+            <p>Yann et l'équipe plongent dans les lieux alternatifs qui redéfinissent la fête.</p>
+            <a href="episodes/episode-03.php">Voir le programme</a>
+        </article>
+        <article class="home-highlight-card">
+            <p class="home-highlight-label">Interview</p>
+            <h2>Un DJ, une ville, une nuit</h2>
+            <p>Conversation inédite avec une figure montante de la scène électro française.</p>
+            <a href="episodes/episode-02.php">Lire l'interview</a>
+        </article>
+        <article class="home-highlight-card">
+            <p class="home-highlight-label">Immersion</p>
+            <h2>Dans les coulisses d'un after mythique</h2>
+            <p>Une équipe, des caméras, et une nuit entière pour capter ce qui ne se voit jamais.</p>
+            <a href="article.php?numArt=1">Regarder l'immersion</a>
+        </article>
     </section>
 
-    <section class="home-section text-center">
-        <h2 class="fw-bold mb-3">Épisode à la une</h2>
-        <h3 class="h4 mb-3">Épisode 01</h3>
-        <p class="mb-4">
-            Plongée au cœur d'une nuit urbaine entre rencontres, musique et lieux emblématiques qui façonnent l'identité de LIGHTS ON.
-        </p>
-        <a class="btn btn-outline-primary" href="article.php?numArt=1">Voir le détail de l'épisode 01</a>
-    </section>
+    <section class="home-section">
+        <div class="home-section-head">
+            <h2>À la une</h2>
+            <a href="episodes.php">Tout voir</a>
+        </div>
 
-    <section class="home-section text-center">
-        <h2 class="fw-bold mb-3">Prochaine diffusion</h2>
-        <p class="mb-0">Nouveau numéro à venir très bientôt. Restez connectés pour découvrir la prochaine immersion nocturne.</p>
-    </section>
+        <div class="row g-4 home-feature-grid">
+            <article class="col-lg-6">
+                <a class="home-feature-card home-feature-card--main" href="episodes/episode-01.php">
+                    <img src="<?php echo ROOT_URL . '/src/uploads/article/article-1.jpg'; ?>" alt="Épisode 01">
+                    <div class="home-feature-content">
+                        <p class="home-feature-tag">Épisode 01</p>
+                        <h3>Première immersion dans les nuits urbaines</h3>
+                        <p>Le pilote de LIGHTS ON suit la trajectoire d'une nuit, de l'ouverture à l'aube.</p>
+                    </div>
+                </a>
+            </article>
 
-    <section class="home-section text-center">
-        <h2 class="fw-bold mb-3">Réseaux</h2>
-        <p class="mb-4">Suivez LIGHTS ON sur nos réseaux pour ne rien manquer des épisodes, coulisses et annonces exclusives.</p>
-        <a class="btn btn-outline-secondary" href="contact.php">Accéder à nos réseaux</a>
+            <div class="col-lg-6">
+                <div class="home-side-list">
+                    <a class="home-side-item" href="episodes/episode-02.php">
+                        <img src="<?php echo ROOT_URL . '/src/uploads/article/article-38.jpg'; ?>" alt="Épisode 02">
+                        <div>
+                            <p class="home-feature-tag">Épisode 02</p>
+                            <h3>Les nouvelles scènes culturelles nocturnes</h3>
+                        </div>
+                    </a>
+                    <a class="home-side-item" href="episodes/episode-03.php">
+                        <img src="<?php echo ROOT_URL . '/src/images/background/background-actualite.jpg'; ?>" alt="Épisode 03">
+                        <div>
+                            <p class="home-feature-tag">Épisode 03</p>
+                            <h3>Quand la nuit devient un terrain d'expression</h3>
+                        </div>
+                    </a>
+                    <a class="home-side-item" href="contact.php">
+                        <img src="<?php echo ROOT_URL . '/src/images/background/background-article.jpg'; ?>" alt="Réseaux sociaux">
+                        <div>
+                            <p class="home-feature-tag">Communauté</p>
+                            <h3>Suivez-nous pour les extraits et annonces exclusives</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
-
-<script>
-    (function () {
-        const lines = Array.from(document.querySelectorAll("[data-typewriter]"));
-        if (!lines.length) {
-            return;
-        }
-
-        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const speedMs = 70;
-        const lineDelayMs = 350;
-
-        const typeLine = (element) =>
-            new Promise((resolve) => {
-                const text = element.dataset.text || "";
-                if (prefersReducedMotion) {
-                    element.textContent = text;
-                    element.classList.add("is-done");
-                    resolve();
-                    return;
-                }
-
-                let index = 0;
-                element.textContent = "";
-                element.classList.remove("is-done");
-
-                const tick = () => {
-                    element.textContent = text.slice(0, index);
-                    if (index >= text.length) {
-                        element.classList.add("is-done");
-                        setTimeout(resolve, lineDelayMs);
-                        return;
-                    }
-                    index += 1;
-                    setTimeout(tick, speedMs);
-                };
-
-                tick();
-            });
-
-        (async () => {
-            for (const line of lines) {
-                await typeLine(line);
-            }
-        })();
-    })();
-</script>
-<script src="<?php echo ROOT_URL . '/src/js/home-scroll-reveal.js'; ?>"></script>
 
 <?php require_once 'footer.php'; ?>
