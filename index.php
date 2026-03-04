@@ -58,6 +58,7 @@ require_once 'header.php';
 <section class="home-hero full-bleed">
     <div class="home-hero-content text-center">
         <h1 class="fw-bold mb-2 typewriter-line" data-typewriter data-text="LIGHTS ON"></h1>
+        <br>
         <p class="lead mb-4 typewriter-line" data-typewriter data-text="Mettre la lumière sur la nuit."></p>
         <br>
         <a class="btn btn-primary" href="episodes.php">▶ Voir le dernier épisode</a>
